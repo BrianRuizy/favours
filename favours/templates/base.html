@@ -1,0 +1,25 @@
+<!-- base template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>{% block title %}My amazing site{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+</head>
+
+<body>
+    {% block content %}
+    {% endblock content %}
+
+    {% include "includes/footer.html" %}
+    {% include "includes/scripts.html" %}
+    <!-- Specific JS goes HERE -->
+    {% block javascripts %}
+    {% endblock javascripts %}
+</body>
+</html>
