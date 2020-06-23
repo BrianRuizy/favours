@@ -130,6 +130,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "favours/static"),
+]
+
 
 # config/settings.py
 AUTHENTICATION_BACKENDS = (
