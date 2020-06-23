@@ -5,8 +5,8 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    {% if user.is_authenticated %}
     {% include "includes/navbar.html" %}
+    {% if user.is_authenticated %}
         <div class="section ">
             <div class="container ">
                 <h1>Account</h1>
@@ -14,11 +14,7 @@
                 <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
             </div>
         </div>
-
-
     {% else %}
-    {% include "includes/navbar.html" %}
-
         <div class="section">
             <div class="container">
                 <h1>Sign In</h1>
@@ -27,7 +23,6 @@
                 <a href="{% provider_login_url 'google' %}">Continue using Google <i class="fa fa-google" aria-hidden="true"></i></a>
             </div>
         </div>
-
 
     {% endif %}
 {% endblock content %}
