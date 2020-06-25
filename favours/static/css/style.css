@@ -21,7 +21,6 @@ body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -51,4 +50,28 @@ text-razzmatazz {
 a.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+/* ------------------------- footer -------------------------- */
+.footer {
+    background-color: #000000;
+    color: #fff;
+    margin: 5em 0 0 0;
+    padding: 5em 0 1em 0;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li a {
+    color: #fff;
+}
+
+.footer a {
+    color: #6c757d;
+}
+
+.footer hr{
+    border-top: 1px solid #1f1f1f
 }
