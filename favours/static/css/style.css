@@ -27,13 +27,27 @@ body {
 
 /* custom brand colors, callable same as BS4 classes */
 /* https://coolors.co/ffffff-d7dcdd-6c8ead-e1306c */
-text-razzmatazz {
-    color: #e1306c !important;
-}
-.navbar-light .navbar-brand {
+.text-razzmatazz {
     color: #e1306c !important;
 }
 
+.btn-razzmatazz {
+    background-color: #e1306c !important;
+    color: #fff !important;
+}
+
+.btn-razzmatazz:hover {
+    background-color: #ce3367 !important;
+}
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.text-black {
+    color: #000 !important;
+}
 /* --------------------------------------------------- */
 
 /* set a max-width for horizontal fluid layout and make it centered */
@@ -47,6 +61,10 @@ text-razzmatazz {
     margin: 8em 0em; 
 }
 
+.navbar-light .navbar-brand {
+    color: #e1306c !important;
+}
+
 a.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
@@ -56,8 +74,8 @@ a.navbar-brand {
 .footer {
     background-color: #000000;
     color: #fff;
-    margin: 5em 0 0 0;
-    padding: 5em 0 1em 0;
+    margin-top: 2em;
+    padding: 6em 0 4em 0;
 }
 
 .footer ul {
@@ -73,5 +91,5 @@ a.navbar-brand {
 }
 
 .footer hr{
-    border-top: 1px solid #1f1f1f
+    border-top: 1px solid #1f1f1f;
 }

@@ -1,5 +1,6 @@
 <!-- navbar.html -->
 {% load static %}
+{% include "allauth/login.html" %}
 
 <nav class="navbar sticky-top navbar-expand-md navbar-light py-3">
     <div class="container">
@@ -33,10 +34,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0 mr-1" type="submit">Log In</button>
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Sign up</button>
+                    <button class="btn btn-outline-secondary my-2 my-sm-0 mr-1" type="submit">Sign up</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-razzmatazz my-2 my-sm-0 " data-toggle="modal" data-target="#exampleModalCenter">Log in</button>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+

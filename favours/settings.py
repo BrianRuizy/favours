@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
-    
-    
+    'allauth.socialaccount.providers.facebook',
+        
     # custom apps go here...
     'favours.apps.accounts',
 ]
