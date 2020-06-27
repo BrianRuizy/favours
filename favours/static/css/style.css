@@ -25,8 +25,8 @@ body {
     margin-right: auto;
 }
 
-/* custom brand colors, callable same as BS4 classes */
-/* https://coolors.co/ffffff-d7dcdd-6c8ead-e1306c */
+/* -------------------------- custom brand colors -------------------------- */
+/* https://coolors.co/ffffff-efefef-d7dcdd-6c8ead-e1306c */
 .text-razzmatazz {
     color: #e1306c !important;
 }
@@ -45,12 +45,24 @@ body {
     color: #fff !important;
 }
 
-.text-black {
+.bg-cultured {
+    background-color: #efefef !important;
+}
+
+.text-cultured {
+    color: #efefef !important;
+}
+
+.btn-cultured {
+    background-color: #efefef !important;
     color: #000 !important;
 }
-/* --------------------------------------------------- */
 
-/* set a max-width for horizontal fluid layout and make it centered */
+.btn-cultured:hover {
+    background-color: #d6d6d6 !important;
+}
+
+/* ------------------------- Boostrap, general -------------------------- */
 .container {
     margin-right: auto;
     margin-left: auto;
@@ -61,6 +73,7 @@ body {
     margin: 8em 0em; 
 }
 
+/* ------------------------- navbar -------------------------- */
 .navbar-light .navbar-brand {
     color: #e1306c !important;
 }
@@ -68,6 +81,39 @@ body {
 a.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-right: 0;
+}
+
+a.navbar-brand p {
+    display: inline;
+    margin: 0;
+    font-weight: bold;
+    color: #e1306c; 
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 420px){
+    a.navbar-brand p {
+        display: none;
+    }
+}
+
+.modal-content {
+    border-radius: .75rem !important;
+    box-shadow: 0px 0px 10px 0px #0000001e;
+}
+
+.navbar .btn {
+    border-radius: 1.3125rem !important;
+}
+
+.navbar .btn:hover {
+    box-shadow: 0px 0px 6px 3px #0000001e;
+}
+
+.navbar .searchbar {
+    border: none;
+    border-radius:  1.3125rem;
 }
 
 /* ------------------------- footer -------------------------- */
@@ -93,3 +139,65 @@ a.navbar-brand {
 .footer hr{
     border-top: 1px solid #1f1f1f;
 }
+
+/* -------------------------- login form -------------------------- */
+.social-login {
+    display: flex;
+}
+
+hr.divider {
+    overflow: visible;
+    border: none;
+    border-top: 1px solid #efefef;
+    text-align: center;
+    margin: 2.5rem 0; 
+}
+
+hr.divider:after {
+    content: 'Or';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    font-size: 12px;
+    padding: 0 16px;
+    background: #fff;
+    color: #2b2b2b;
+}
+
+input#id_login, input#id_password {
+    border: none;
+    background-color: #efefef;
+}
+
+button.btn.btn-block.btn-login.primaryAction {
+    background: linear-gradient(45deg, #e1306c, #dc3545);
+    color: #fff;
+    border-radius: 2rem ;
+}
+
+button.btn.btn-block.btn-login.primaryAction:hover {
+    box-shadow: black;
+}
+
+label.password, label.username {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+label.password a {
+    float: right;
+    font-weight: lighter;
+    text-decoration: underline;
+    color: #000;
+}
+
+.modal-login .modal-title {
+    font-weight: lighter;
+}
+
+.modal-login .modal-body {
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+}
+

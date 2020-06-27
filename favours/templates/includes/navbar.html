@@ -1,45 +1,49 @@
 <!-- navbar.html -->
 {% load static %}
 {% include "allauth/login.html" %}
+{% include "allauth/signup.html" %}
+
 
 <nav class="navbar sticky-top navbar-expand-md navbar-light py-3">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="{% static 'assets/favours_light.png' %}" width="50" height="50" class="d-inline-block align-middle" alt="logo_light">
-            Favours
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<div class="container">
+    <a class="navbar-brand" href="/">
+        <img src="{% static 'assets/favours_light.png' %}" width="50" height="50" class="d-inline-block align-middle" alt="logo_light">
+        <p>Favours</p>
+    </a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-globe"></i>
+
+    <input class="form-control searchbar bg-cultured col ml-4" type="search" placeholder="Search" aria-label="Search">
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            {% if user.is_authenticated %}
+                <div class="dropdown show">
+                    <a class="btn btn-user dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>
+                        {{ user.first_name | default:user.username}}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">English (us)</a>
-                        <a class="dropdown-item" href="#">Spanish (es)</a>
-                        <a class="dropdown-item" href="#">Polish (pl)</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">More?</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item text-muted" href="{% url 'account_reset_password' %}"><i class="fas fa-cog"></i>&nbsp;&nbsp; Settings</a>
+                        <a class="dropdown-item" href="{% url 'account_reset_password' %}"><i class="fas fa-user-lock"></i>&nbsp; Reset Password</a><hr>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp; Logout</a>
                     </div>
-                </li>
-
-                <li class="nav-item mr-3">
-                    <a class="nav-link" href="#">Help</a>
-                </li>
-
-                <li class="nav-item">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0 mr-1" type="submit">Sign up</button>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-razzmatazz my-2 my-sm-0 " data-toggle="modal" data-target="#exampleModalCenter">Log in</button>
-                </li>
-            </ul>
-        </div>
+                </div>
+            {% else %}
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-link text-reset mr-1" data-toggle="modal" data-target="#signupModalCenter">Sign up</button>
+                <button type="button" class="btn btn-razzmatazz" data-toggle="modal" data-target="#loginModalCenter">Log in</button>
+            {% endif %}
+            </li>
+        </ul>
     </div>
+</div>
 </nav>
 

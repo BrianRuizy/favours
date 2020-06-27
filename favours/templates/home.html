@@ -10,7 +10,7 @@
         <div class="section ">
             <div class="container ">
                 <h1>Account</h1>
-                <p>Welcome {{ user.first_name }} !!!</p>
+                <p>Welcome, {{ user.first_name | default:user.username}}!</p>
                 <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
             </div>
         </div>
