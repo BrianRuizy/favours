@@ -25,7 +25,7 @@ SECRET_KEY = 'lu9nc6*%%+e%tyvg%vtj$=wm(4v9mu+ixb&lv6n!lur@2w5p#2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'ec2-54-187-186-90.us-west-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ec2-54-187-186-90.us-west-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -49,6 +49,16 @@ INSTALLED_APPS = [
     # custom apps go here...
     'favours.apps.accounts',
 ]
+
+SOCIALACCOUNT_PROVIDERS =  { 
+    'facebook':
+        {'METHOD': 'oauth2',
+        'SCOPE': ['email'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'LOCALE_FUNC': lambda request: 'en_US',
+        'VERSION': 'v2.4'
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
