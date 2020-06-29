@@ -84,6 +84,8 @@ venv/
 ENV/ 
 env.bak/ 
 venv.bak/ 
+.envwin
+envwin
 
 # mkdocs documentation 
 /site 
@@ -110,6 +112,7 @@ GitHub.sublime-settings
 
 # Visual Studio Code # 
 .vscode/* 
+.vscode
 !.vscode/settings.json 
 !.vscode/tasks.json 
 !.vscode/launch.json 
