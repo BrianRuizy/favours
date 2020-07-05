@@ -1,0 +1,15 @@
+{% load static %}
+{% load account socialaccount %}
+<!-- 3rd party social OAuth apps -->
+<div class="social-login">
+    <a class="btn btn-cultured col-lg-9" role="button" href="{% provider_login_url 'google' %}">
+        <img src="{% static 'assets/icons/google.svg' %}"/>
+        Continue with Google
+    </a>
+    <a class="btn btn-cultured ml-2" role="button" href="{% provider_login_url 'facebook' %}">
+        <img src="{% static 'assets/icons/facebook.svg' %}"/>
+    </a>
+    <a class="btn btn-cultured ml-2" role="button" href="{% provider_login_url 'github' %}">
+        <img src="{% static 'assets/icons/github.svg' %}"/>
+    </a>
+</div>

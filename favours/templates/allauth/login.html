@@ -1,8 +1,7 @@
-{% load account socialaccount %}
 {% load i18n %}
-{% load static%}
+{% load static %}
 
-<!-- Modal -->
+<!-- Login Modal -->
 {% block content %}
 <div class="modal fade modal-login" id="loginModalCenter" tabindex="-1" role="dialog"
     aria-labelledby="loginModalCenterTitle" aria-hidden="true">
@@ -20,19 +19,7 @@
                     <h3 class="mb-0 font-weight-bold">Welcome back!</h3>
                     <p>Some catchy sentence here</p>
                 </div>
-                <div class="social-login">
-                    
-                    <a class="btn btn-cultured col-lg-9" role="button" href="{% provider_login_url 'google' %}">
-                        <img src="{% static 'assets/icons/google.svg' %}"/>
-                        Continue with Google
-                    </a>
-                    <a class="btn btn-cultured ml-2" role="button" href="{% provider_login_url 'facebook' %}">
-                        <img src="{% static 'assets/icons/facebook.svg' %}"/>
-                    </a>
-                    <a class="btn btn-cultured ml-2" role="button" href="{% provider_login_url 'github' %}">
-                        <img src="{% static 'assets/icons/github.svg' %}"/>
-                    </a>
-                </div>
+                {% include "allauth/social_login.html" %}
                 <hr class="divider">
                 <form class="django-login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
@@ -63,7 +50,7 @@
             </div>
             <div class="modal-footer">
                 <small>Not a member?
-                    <a data-dismiss="modal" type="button" data-toggle="modal" data-target="#signupModalCenter"> <u>Sign up</u></a>
+                    <a data-dismiss="modal" type="button" data-toggle="modal" data-target="#signupModalCenter"> <u>Sign up</u>.</a>
                 </small>
             </div>
         </div>

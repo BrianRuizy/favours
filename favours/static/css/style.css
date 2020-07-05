@@ -84,7 +84,7 @@ a.navbar-brand p {
     }
 }
 
-.modal-login .modal-content {
+.modal-login .modal-content, .modal-signup .modal-content{
     border-radius: .75rem;
     box-shadow: 0px 0px 10px 0px #0000001e;
 }
@@ -180,11 +180,11 @@ small.forgot-password a {
     color: var(--brand-blue);
 }
 
-.modal-login .modal-title {
+.modal-login .modal-title, .modal-signup .modal-title {
     font-weight: lighter;
 }
 
-.modal-login .modal-body {
+.modal-login .modal-body, .modal-signup .modal-body{
     margin-top: .5rem;
     margin-bottom: 1.5rem;
 }
