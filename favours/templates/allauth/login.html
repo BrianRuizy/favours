@@ -1,10 +1,10 @@
 {% load i18n %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!-- Login Modal -->
 {% block content %}
-<div class="modal fade modal-login" id="loginModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="loginModalCenterTitle" aria-hidden="true">
+<div class="modal fade modal-login" id="loginModalCenter" tabindex="-1" role="dialog" aria-labelledby="loginModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -23,6 +23,7 @@
                 <hr class="divider">
                 <form class="django-login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
+                    {{ form | crispy }}
                     <div class="alert-warning m-1">
                         <small>
                             <ul class="alert-message">

@@ -4,8 +4,7 @@
 
 <!-- Modal -->
 {% block content %}
-<div class="modal fade modal-signup" id="signupModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="signupModalCenterTitle" aria-hidden="true">
+<div class="modal fade modal-signup" id="signupModalCenter" tabindex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -27,12 +26,10 @@
                     {% for field in form %}
                         {{ field | as_crispy_field  }}
                     {% endfor %}
-                    
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
                 </form>
-                
             </div>
             <div class="modal-footer">
                 <small>Already running favours?

@@ -188,3 +188,26 @@ small.forgot-password a {
     margin-top: .5rem;
     margin-bottom: 1.5rem;
 }
+
+/* categories */
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  
+   
+  }
+  .scrolling-wrapper .card {
+    display: inline-block;
+    padding: 4rem
+  }
+  .scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scrolling-wrapper  &::-webkit-scrollbar {
+    
+      display: none;
+    }
+  

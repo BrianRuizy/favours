@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
     'crispy_forms', 
-    
+    'bootstrap_modal_forms',
+
     # custom apps go here...
     'favours.apps.accounts',
 ]
