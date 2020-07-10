@@ -15,17 +15,21 @@ body {
     overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
         Helvetica, Arial, "Lucida Grande", sans-serif !important;
 }
 
 /* -------------------------- custom brand colors -------------------------- */
 /* https://coolors.co/ffffff-efefef-d7dcdd-6c8ead-e1306c */
 :root {
-    --brand-light-grey: #EFEFEF; /* Cultured */
-    --brand-dark-grey:  #718084; /* Slate Grey */
-    --brand-blue:       #6C8EAD; /* Shadow Blue */
-    --brand-pink:       #E1306C; /* Razzmatazz */
+    --brand-light-grey: #EFEFEF;
+    /* Cultured */
+    --brand-dark-grey: #718084;
+    /* Slate Grey */
+    --brand-blue: #6C8EAD;
+    /* Shadow Blue */
+    --brand-pink: #E1306C;
+    /* Razzmatazz */
 }
 
 .btn-razzmatazz {
@@ -33,9 +37,17 @@ body {
     color: #fff !important;
 }
 
-.btn-razzmatazz:hover { background-color: #ce3367 !important; }
-.text-razzmatazz { color: var(--brand-pink) !important; }
-.bg-razzmatazz { color: var(--brand-pink) !important; }
+.btn-razzmatazz:hover {
+    background-color: #ce3367 !important;
+}
+
+.text-razzmatazz {
+    color: var(--brand-pink) !important;
+}
+
+.bg-razzmatazz {
+    color: var(--brand-pink) !important;
+}
 
 
 .btn-cultured {
@@ -43,25 +55,34 @@ body {
     color: #000 !important;
 }
 
-.btn-cultured:hover { background-color: #d6d6d6 !important; }
-.bg-cultured { background-color: var(--brand-light-grey) !important; }
-.text-cultured { color: var(--brand-light-grey) var(--brand-light-grey) !important; }
+.btn-cultured:hover {
+    background-color: #d6d6d6 !important;
+}
+
+.bg-cultured {
+    background-color: var(--brand-light-grey) !important;
+}
+
+.text-cultured {
+    color: var(--brand-light-grey) var(--brand-light-grey) !important;
+}
 
 
 /* ------------------------- Boostrap, general -------------------------- */
 .container {
     margin-right: auto;
     margin-left: auto;
-    max-width: 1600px; /* or 950px */
+    max-width: 1600px;
+    /* or 950px */
 }
 
 .section {
-    margin: 8em 0em; 
+    margin: 8em 0em;
 }
 
 /* ------------------------- navbar -------------------------- */
 .navbar-light .navbar-brand {
-    color: var(--brand-pink) ;
+    color: var(--brand-pink);
 }
 
 a.navbar-brand {
@@ -74,17 +95,18 @@ a.navbar-brand p {
     display: inline;
     margin: 0;
     font-weight: bold;
-    color: var(--brand-pink); 
+    color: var(--brand-pink);
     margin-right: 1rem;
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 420px) {
     a.navbar-brand p {
         display: none;
     }
 }
 
-.modal-login .modal-content, .modal-signup .modal-content{
+.modal-login .modal-content,
+.modal-signup .modal-content {
     border-radius: .75rem;
     box-shadow: 0px 0px 10px 0px #0000001e;
 }
@@ -99,7 +121,7 @@ a.navbar-brand p {
 
 .navbar .searchbar {
     border: none;
-    border-radius:  1.3125rem;
+    border-radius: 1.3125rem;
 }
 
 /* ------------------------- footer -------------------------- */
@@ -122,7 +144,7 @@ a.navbar-brand p {
     color: var(--brand-dark-grey);
 }
 
-.footer hr{
+.footer hr {
     border-top: 1px solid var(--brand-dark-grey);
 }
 
@@ -136,7 +158,7 @@ hr.divider {
     border: none;
     border-top: 1px solid var(--brand-light-grey);
     text-align: center;
-    margin: 2.5rem 0; 
+    margin: 2.5rem 0;
 }
 
 hr.divider:after {
@@ -150,13 +172,15 @@ hr.divider:after {
     color: #3a3a3a;
 }
 
-input#id_login, input#id_password {
+input#id_login,
+input#id_password {
     border: none;
     background-color: var(--brand-light-grey);
     font-weight: bold;
 }
 
-input#id_login:hover, input#id_password:hover {
+input#id_login:hover,
+input#id_password:hover {
     background-color: #fff;
     box-shadow: 0 0 0px 4px var(--brand-light-grey);
 }
@@ -166,7 +190,7 @@ button.btn.btn-login {
     background: linear-gradient(45deg, var(--brand-pink), #dc3545);
     color: #fff;
     border-radius: 2rem;
-    margin-top: 2rem; 
+    margin-top: 2rem;
 }
 
 button.btn.btn-login:hover {
@@ -180,11 +204,13 @@ small.forgot-password a {
     color: var(--brand-blue);
 }
 
-.modal-login .modal-title, .modal-signup .modal-title {
+.modal-login .modal-title,
+.modal-signup .modal-title {
     font-weight: lighter;
 }
 
-.modal-login .modal-body, .modal-signup .modal-body{
+.modal-login .modal-body,
+.modal-signup .modal-body {
     margin-top: .5rem;
     margin-bottom: 1.5rem;
 }
@@ -195,19 +221,20 @@ small.forgot-password a {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-  
-   
-  }
-  .scrolling-wrapper .card {
+
+
+}
+
+.scrolling-wrapper .card {
     display: inline-block;
     padding: 4rem
-  }
-  .scrolling-wrapper {
-    -webkit-overflow-scrolling: touch;
-  }
+}
 
-  .scrolling-wrapper  &::-webkit-scrollbar {
-    
-      display: none;
-    }
-  
+.scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-wrapper &::-webkit-scrollbar {
+
+    display: none;
+}
