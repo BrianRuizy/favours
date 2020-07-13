@@ -77,7 +77,7 @@ body {
 }
 
 .section {
-    margin: 8em 0em;
+    padding: 6em 0em;
 }
 
 /* ------------------------- navbar -------------------------- */
@@ -103,12 +103,6 @@ a.navbar-brand p {
     a.navbar-brand p {
         display: none;
     }
-}
-
-.modal-login .modal-content,
-.modal-signup .modal-content {
-    border-radius: .75rem;
-    box-shadow: 0px 0px 10px 0px #0000001e;
 }
 
 .navbar .btn {
@@ -149,8 +143,15 @@ a.navbar-brand p {
 }
 
 /* -------------------------- login form -------------------------- */
-.social-login {
-    display: flex;
+/* .section.login {
+    background: #FAFAFA;
+} */
+
+.card.card-login {
+    border-radius: 8px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 25px;
 }
 
 hr.divider {
@@ -158,11 +159,11 @@ hr.divider {
     border: none;
     border-top: 1px solid var(--brand-light-grey);
     text-align: center;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
 }
 
 hr.divider:after {
-    content: 'Or';
+    content: 'OR';
     display: inline-block;
     position: relative;
     top: -15px;
@@ -172,28 +173,14 @@ hr.divider:after {
     color: #3a3a3a;
 }
 
-input#id_login,
-input#id_password {
-    border: none;
-    background-color: var(--brand-light-grey);
-    font-weight: bold;
-}
-
-input#id_login:hover,
-input#id_password:hover {
-    background-color: #fff;
-    box-shadow: 0 0 0px 4px var(--brand-light-grey);
-}
-
-
-button.btn.btn-login {
+.btn.btn-login {
     background: linear-gradient(45deg, var(--brand-pink), #dc3545);
     color: #fff;
     border-radius: 2rem;
     margin-top: 2rem;
 }
 
-button.btn.btn-login:hover {
+.btn.btn-login:hover {
     box-shadow: 0 0 0px 4px var(--brand-light-grey);
 }
 
@@ -204,25 +191,12 @@ small.forgot-password a {
     color: var(--brand-blue);
 }
 
-.modal-login .modal-title,
-.modal-signup .modal-title {
-    font-weight: lighter;
-}
-
-.modal-login .modal-body,
-.modal-signup .modal-body {
-    margin-top: .5rem;
-    margin-bottom: 1.5rem;
-}
-
 /* categories */
 
 .scrolling-wrapper {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-
-
 }
 
 .scrolling-wrapper .card {
@@ -234,7 +208,14 @@ small.forgot-password a {
     -webkit-overflow-scrolling: touch;
 }
 
-.scrolling-wrapper &::-webkit-scrollbar {
-
+.scrolling-wrapper ::-webkit-scrollbar {
     display: none;
+}
+
+.social-login a.btn.btn-block {
+    border: 1px solid #dadce0;
+}
+
+.login label.requiredField {
+    font-weight: bold;
 }

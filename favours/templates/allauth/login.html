@@ -1,59 +1,32 @@
+{% extends "base.html" %}
+
 {% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
 
 <!-- Login Modal -->
 {% block content %}
-<div class="modal fade modal-login" id="loginModalCenter" tabindex="-1" role="dialog" aria-labelledby="loginModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLongTitle">Log in</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="section login">
+    <div class="container">
+        <div class="card card-login mx-auto col-lg-6">
+            <div class="text-center pb-2">
+                <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
+                <h3 class="mb-0 font-weight-bold">Welcome back!</h3>
+                <p>Some catchy sentence here</p>
             </div>
-            <div class="modal-body">
-                <div class="text-center pb-2">
-                    <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
-                    <h3 class="mb-0 font-weight-bold">Welcome back!</h3>
-                    <p>Some catchy sentence here</p>
-                </div>
-                {% include "allauth/social_login.html" %}
-                <hr class="divider">
-                <form class="django-login" method="POST" action="{% url 'account_login' %}">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="alert-warning m-1">
-                        <small>
-                            <ul class="alert-message">
-                                {% for error in form.non_field_errors %}
-                                <li>{{ error }}</li>
-                                {% endfor %}
-                            </ul>
-                        </small>
-                    </div>
-                    <div class="form-group mb-2 {% if form.login.errors %}has-error{% endif %}">
-                        <label for="id_login" class="sr-only"></label>
-                        <input type="text" name="login" class="form-control" autofocus="autofocus" maxlength="150" required="" id="id_login" placeholder="Username">
-                    </div>
-                    <div class="form-group mb-4 {% if form.password.errors %}has-error{% endif %}">
-                        <label for="id_password" class="sr-only"></label>
-                        <input type="password" name="password" class="form-control" req id="id_password" placeholder="Password">
-                        <small class="forgot-password"><a href="{% url 'account_reset_password' %}">{% trans "Forgot password?" %}</a></small>
-                    </div>
-                    <button type="submit" class="btn btn-block btn-login primaryAction">{% trans "Log in" %}</button>
-
-                    {% if redirect_field_value %}
+            {% include "allauth/social_login.html" %}
+            <hr class="divider">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {{ form | crispy }}
+                
+                {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                    {% endif %}
-                </form>
-            </div>
-            <div class="modal-footer">
-                <small>Not a member?
-                    <a data-dismiss="modal" type="button" data-toggle="modal" data-target="#signupModalCenter"> <u>Sign up</u>.</a>
-                </small>
-            </div>
+                {% endif %}
+                <button type="submit" class="btn btn-block btn-login primaryAction mt-4">{% trans "Log in" %}</button>
+            </form>
+            <hr>
+            <small>Don't have an account?</small>
         </div>
     </div>
 </div>

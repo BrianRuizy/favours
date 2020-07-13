@@ -1,8 +1,5 @@
 <!-- navbar.html -->
 {% load static %}
-{% include "allauth/login.html" %}
-{% include "allauth/signup.html" %}
-
 
 <nav class="navbar sticky-top navbar-expand-md navbar-light py-3">
 <div class="container">
@@ -38,8 +35,8 @@
                 </div>
             {% else %}
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-link text-reset mr-1" data-toggle="modal" data-target="#signupModalCenter">Sign up</button>
-                <button type="button" class="btn btn-razzmatazz" data-toggle="modal" data-target="#loginModalCenter">Log in</button>
+                <a class="btn btn-link text-reset mr-1" href="{% url 'account_signup' %}">Sign up</a>
+                <a class="btn btn-razzmatazz" href="{% url 'account_login' %}">Log in</a>
             {% endif %}
             </li>
         </ul>
