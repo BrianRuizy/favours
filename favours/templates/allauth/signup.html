@@ -4,21 +4,29 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<!-- Modal -->
+<!-- signup form -->
 {% block content %}
-<div class="section">
-    <div class="container mx-auto">
-        <div class="card ">
+<div class="section section-signup">
+    <div class="container">
+        <div class="card card-signup mx-auto col-lg-6">
+            <div class="text-center pb-2">
+                <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
+                <h3 class="mb-0 font-weight-bold">Welcome to Favours!</h3>
+                <p>Some welcoming sentence here</p>
+            </div>
+            {% include "allauth/social_login.html" %}
+            <hr class="divider">
             <form class="signup" method="POST" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
                 
                 {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button type="submit" class="btn btn-block login-btn primaryAction mt-4">{% trans "Sign up" %}</button>
-            <hr class="my-4">
+                <button type="submit" class="btn btn-signup btn-block  primaryAction mt-4">{% trans "Sign Up" %}</button>
             </form>
+            <hr>
+            <small>Already a user? <a href="{{ login_url }}"><u>Log in</u></a></small>
         </div>
     </div>
 </div>

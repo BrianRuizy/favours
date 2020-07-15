@@ -143,11 +143,7 @@ a.navbar-brand p {
 }
 
 /* -------------------------- login form -------------------------- */
-/* .section.login {
-    background: #FAFAFA;
-} */
-
-.card.card-login {
+.card.card-login, .card.card-signup {
     border-radius: 8px;
     border: 1px solid #dadce0;
     border-radius: 8px;
@@ -173,14 +169,14 @@ hr.divider:after {
     color: #3a3a3a;
 }
 
-.btn.btn-login {
+.btn.btn-login, .btn.btn-signup {
     background: linear-gradient(45deg, var(--brand-pink), #dc3545);
     color: #fff;
     border-radius: 2rem;
     margin-top: 2rem;
 }
 
-.btn.btn-login:hover {
+.btn.btn-login:hover, .btn.btn-signup:hover {
     box-shadow: 0 0 0px 4px var(--brand-light-grey);
 }
 
@@ -216,6 +212,6 @@ small.forgot-password a {
     border: 1px solid #dadce0;
 }
 
-.login label.requiredField {
+.login label {
     font-weight: bold;
 }

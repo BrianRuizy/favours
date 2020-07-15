@@ -4,14 +4,14 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<!-- Login Modal -->
+<!-- Login form -->
 {% block content %}
-<div class="section login">
+<div class="section section-login">
     <div class="container">
         <div class="card card-login mx-auto col-lg-6">
             <div class="text-center pb-2">
                 <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
-                <h3 class="mb-0 font-weight-bold">Welcome back!</h3>
+                <h3 class="mb-0 font-weight-bold">Welcome back {{ user.Username }}!</h3>
                 <p>Some catchy sentence here</p>
             </div>
             {% include "allauth/social_login.html" %}
@@ -23,10 +23,10 @@
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button type="submit" class="btn btn-block btn-login primaryAction mt-4">{% trans "Log in" %}</button>
+                <button type="submit" class="btn btn-block btn-login primaryAction mt-4">{% trans "Log In" %}</button>
             </form>
             <hr>
-            <small>Don't have an account?</small>
+            <small>Don't have an account? <a href="{{ signup_url }}"><u>Sign Up</u></a></small> 
         </div>
     </div>
 </div>
