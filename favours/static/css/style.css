@@ -212,6 +212,6 @@ small.forgot-password a {
     border: 1px solid #dadce0;
 }
 
-.login label {
+.login label.requiredField, .signup label.requiredField {
     font-weight: bold;
 }

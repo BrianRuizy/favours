@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms', 
 
     # custom apps go here...
-    'favours.apps.accounts',
+    'favours.apps.users',
 ]
 
 SOCIALACCOUNT_PROVIDERS =  { 
