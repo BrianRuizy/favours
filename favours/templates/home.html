@@ -5,27 +5,5 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-{% include "includes/navbar.html" %}
-
-{% if user.is_authenticated %}
-    <div class="section ">
-        <div class="container ">
-            <h1>Account</h1>
-            <p>Welcome, {{ user.first_name | default:user.username}}!</p>
-            <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
-        </div>
-    </div>
-{% else %}
-    <div class="section">
-        <div class="container">
-            <h1>Sign In</h1>
-            <a href="{% provider_login_url 'github' %}">Continue using GitHub <i class="fa fa-github" aria-hidden="true"></i>
-            </a><br>
-            <a href="{% provider_login_url 'google' %}">Continue using Google <i class="fa fa-google" aria-hidden="true"></i></a>
-        </div>
-    </div>
-{% endif %}
-
-{% include "sections/categories.html" %}
-{% include "includes/footer.html" %}
+    {% include "sections/categories.html" %}
 {% endblock content %}

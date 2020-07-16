@@ -23,3 +23,6 @@ class MySignupView(SignupView):
 class MyPasswordResetView(PasswordResetView):
     template_name = 'allauth/password_reset.html'
 
+
+def profile(request):
+    return render(request, 'users/profile.html')

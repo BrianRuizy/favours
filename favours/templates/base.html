@@ -16,9 +16,12 @@
 </head>
 
 <body>
+    {% include "includes/navbar.html" %}
+
     {% block content %}
     {% endblock content %}
     
+    {% include "includes/footer.html" %}
     {% include "includes/scripts.html" %}
     <!-- Specific JS goes HERE -->
     {% block javascripts %}

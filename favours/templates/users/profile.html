@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <div class="section ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2 p-2 text-center">
+                        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile">
+                    </div>
+                    <div class="col-10 ">
+                        <h1>Account</h1>
+                        <p>Welcome, {{ user.first_name | default:user.username}}!</p>
+                        <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    {% else %}
+        <div class="section">
+            <div class="container">
+                <h1>Sign In</h1>
+                <a href="{% provider_login_url 'github' %}">Continue using GitHub <i class="fa fa-github" aria-hidden="true"></i>
+                </a><br>
+                <a href="{% provider_login_url 'google' %}">Continue using Google <i class="fa fa-google" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock content %} 

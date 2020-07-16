@@ -215,3 +215,9 @@ small.forgot-password a {
 .login label.requiredField, .signup label.requiredField {
     font-weight: bold;
 }
+
+/* -------------------------- User Profile -------------------------- */
+.account-img {
+    height: 125px;
+    width: 125px;
+}
