@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+
+{% block title %} | Profile{% endblock title %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="section section-profile">
+        <div class="container">
+            <div class="card p-4">
+                <div class="row">
+                    <div class="col-md-2 p-2 text-center">
+                        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile">
+                    </div>
+                    <div class="col-md-10 ">
+                        <h1>Profile</h1>
+                        <p>Welcome, {{ user.first_name | default:user.username}}!</p>
+                        <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <fieldset class="form-group">
+                                {{ u_form | crispy }}
+                                {{ p_form | crispy }}
+                            </fieldset>
+                            <div class="form-group">
+                                <button class="btn btn-outline-secondary" type="submit">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="section">
+        <div class="container">
+            <h1>Sign In</h1>
+            <a href="{% provider_login_url 'github' %}">Continue using GitHub <i class="fa fa-github" aria-hidden="true"></i>
+            </a><br>
+            <a href="{% provider_login_url 'google' %}">Continue using Google <i class="fa fa-google" aria-hidden="true"></i></a>
+        </div>
+    </div>
+{% endif %}
+{% endblock content %} 

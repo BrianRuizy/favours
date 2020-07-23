@@ -4,31 +4,30 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<!-- signup form -->
+<!-- Login form -->
 {% block content %}
-<div class="section section-signup">
+<div class="section section-login">
     <div class="container">
-        <div class="card card-signup mx-auto col-lg-6">
+        <div class="card p-4 mx-auto col-lg-5">
             <div class="text-center pb-2">
                 <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
-                <h3 class="mb-0 font-weight-bold">Welcome to Favours!</h3>
-                <p>Some welcoming sentence here</p>
+                <h3 class="mb-0 font-weight-bold">Welcome back {{ user.Username }}</h3>
+                <p>Some catchy sentence here</p>
             </div>
             {% include "allauth/social_login.html" %}
             <hr class="divider">
-            <form class="signup" method="POST" action="{% url 'account_signup' %}">
+            <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
                 
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button type="submit" class="btn btn-signup btn-block  primaryAction mt-4">{% trans "Sign Up" %}</button>
+                <button type="submit" class="btn btn-block btn-login primaryAction mt-4">{% trans "Log In" %}</button>
             </form>
             <hr>
-            <small>Already a user? <a href="{{ login_url }}"><u>Log in</u></a></small>
+            <small>Don't have an account? <a href="{{ signup_url }}"><u>Sign Up</u></a></small> 
         </div>
     </div>
 </div>
 {% endblock %}
-

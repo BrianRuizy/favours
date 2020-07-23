@@ -153,11 +153,9 @@ a.navbar-brand p {
 }
 
 /* -------------------------- login form -------------------------- */
-.card.card-login, .card.card-signup {
-    border-radius: 8px;
-    border: 1px solid #dadce0;
-    border-radius: 8px;
-    padding: 25px;
+.card {
+    border-radius: 8px !important;
+    border: 1px solid #dadce0 !important;
 }
 
 hr.divider {
@@ -197,34 +195,22 @@ small.forgot-password a {
     color: var(--brand-blue);
 }
 
-/* categories */
-
-.scrolling-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-}
-
-.scrolling-wrapper .card {
-    display: inline-block;
-    padding: 4rem
-}
-
-.scrolling-wrapper {
-    -webkit-overflow-scrolling: touch;
-}
-
-.scrolling-wrapper ::-webkit-scrollbar {
-    display: none;
-}
-
-.social-login a.btn.btn-block {
+.social-login a.btn {
     border: 1px solid #dadce0;
+}
+
+.social-login a.btn.btn-block:hover {
+    background-color: var(--brand-light-grey);
+    border: 1px solid var(--brand-dark-grey);
 }
 
 .login label.requiredField, .signup label.requiredField {
     font-weight: bold;
 }
+
+/* -------------------------- categories -------------------------- */
+
+
 
 /* -------------------------- User Profile -------------------------- */
 .account-img {
