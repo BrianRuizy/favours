@@ -9,11 +9,6 @@ from .models import Profile
 from .forms import UserUpdateForm, ProfileUpdateForm
 
 
-# Create your views here.
-class Home(TemplateView):
-    template_name = 'home.html'
-
-
 class MyLoginView(LoginView):
     template_name = 'allauth/login.html'
 

@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('favours.apps.users.urls')),
+    path('', include('favours.apps.listings.urls')),
+
 ]

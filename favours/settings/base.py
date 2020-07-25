@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ec2-54-187-186-90.us-west-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'localhost:8000', 'ec2-54-187-186-90.us-west-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     # custom apps go here...
     'favours.apps.users',
+    'favours.apps.listings',
 ]
 
 SOCIALACCOUNT_PROVIDERS =  { 
@@ -169,8 +170,8 @@ SITE_ID = 1
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'listings-home'
 
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'listings-home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
