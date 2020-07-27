@@ -1,46 +1,43 @@
 <!-- navbar.html -->
 {% load static %}
-
 <nav class="navbar sticky-top navbar-expand-md navbar-light py-3">
-<div class="container">
-    <a class="navbar-brand" href="/">
-        <img src="{% static 'assets/favours_light.png' %}" width="50" height="50" class="d-inline-block align-middle" alt="logo_light">
-        <p>Favours</p>
-    </a>
-
-
-    <input class="form-control searchbar bg-cultured col ml-4" type="search" placeholder="Search" aria-label="Search">
-
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            {% if user.is_authenticated %}
-                <div class="dropdown show">
-                    <a class="btn btn-user dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user-circle"></i>
-                        {{ user.first_name | default:user.username}}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user-circle"></i>&nbsp;&nbsp; Profile</a>
-                        <a class="dropdown-item" href="{% url 'account_reset_password' %}"><i class="fas fa-cog"></i>&nbsp;&nbsp; Account</a>
-                        <hr>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp; Log out</a>
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'assets/favours_light.png' %}" width="50" height="50"
+                class="d-inline-block align-middle" alt="logo_light">
+            <p>Favours</p>
+        </a>
+        <input class="form-control searchbar bg-cultured col ml-4" type="search" placeholder="Search" aria-label="Search">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                    <div class="dropdown show">
+                        <a class="btn btn-user dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                            {{ user.first_name | default:user.username}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'profile' %}"><i
+                                    class="fas fa-user-circle"></i>&nbsp;&nbsp; Profile</a>
+                            <a class="dropdown-item" href="{% url 'account_reset_password' %}"><i
+                                    class="fas fa-cog"></i>&nbsp;&nbsp; Account</a>
+                            <hr>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}"><i
+                                    class="fas fa-sign-out-alt"></i>&nbsp;&nbsp; Log out</a>
+                        </div>
                     </div>
-                </div>
-            {% else %}
-                <a class="btn btn-link text-reset mr-1" href="{% url 'account_signup' %}">Sign up</a>
-                <a class="btn btn-razzmatazz" href="{% url 'account_login' %}">Log in</a>
-            {% endif %}
-            </li>
-        </ul>
+                    {% else %}
+                    <a class="btn btn-link text-reset mr-1" href="{% url 'account_signup' %}">Sign up</a>
+                    <a class="btn btn-razzmatazz" href="{% url 'account_login' %}">Log in</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 </nav>
-

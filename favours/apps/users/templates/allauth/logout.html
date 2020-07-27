@@ -13,15 +13,11 @@
             <div class="text-center pb-2">
                 <h3 class="mb-0 font-weight-bold">{% trans "Sign Out" %}</h3>
                 <p>{% trans 'Are you sure you want to sign out?' %}</p>
-                
                 <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
                     {{ form | crispy }}
-
-                    <button  class="btn btn-block btn-login primaryAction" type="submit">{% trans 'Log out' %}</button>
+                    <button class="btn btn-block btn-login primaryAction" type="submit">{% trans 'Log out' %}</button>
                 </form>
-                
-        
             </div>
         </div>
     </div>
