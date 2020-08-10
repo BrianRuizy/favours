@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="section section-delete">
+    <div class="container">
+        <div class="card p-4 mx-auto col-lg-5">
+            <div class="text-center pb-2">
+                <form method="POST">
+                    {% csrf_token %}
+                    <h3 class="mb-0 font-weight-bold">{% trans "Delete Post" %}</h3>
+                    <p>{% trans 'Are you sure you want to delete your post ' %}<i>{{ object.title }}</i>?</p>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-razzmatazz primaryAction" type="submit">{% trans 'Delete' %}</button>
+                        <a class="btn btn-secondary primaryAction" href="{% url 'post-detail' object.id %}">{% trans 'Cancel' %}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

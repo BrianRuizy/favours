@@ -13,5 +13,6 @@ class Post(models.Model):
         return self.title
     
     def get_absolute_url(self):
+        # Sets where to redirect user after submitting a post
         return reverse('post-detail', kwargs={"pk": self.pk})
     

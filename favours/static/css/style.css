@@ -15,8 +15,8 @@ body {
     overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-        Helvetica, Arial, "Lucida Grande", sans-serif !important;
+    /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", */
+        /* Helvetica, Arial, "Lucida Grande", sans-serif !important; */
 }
 
 /* -------------------------- custom brand colors -------------------------- */
@@ -109,11 +109,6 @@ a.navbar-brand p {
     margin-right: 1rem;
 }
 
-@media screen and (max-width: 420px) {
-    a.navbar-brand p {
-        display: none;
-    }
-}
 
 .navbar .btn {
     border-radius: 1.3125rem;
@@ -123,9 +118,25 @@ a.navbar-brand p {
     box-shadow: 0 0 0px 4px var(--brand-light-grey);
 }
 
-.navbar .searchbar {
-    border: none;
-    border-radius: 1.3125rem;
+.navbar .btn-user {
+    padding: 3px 10px 3px 5px;
+    border: 1px solid #dadce0;
+}
+
+.navbar .btn-user img.rounded-circle.account-img {
+    height: 31px;
+    width: 31px;
+    border: 1px solid var(--brand-);
+}
+
+.dropdown-toggle::after {
+    vertical-align: 0.155em !important;
+}
+
+@media screen and (max-width: 420px) {
+    a.navbar-brand p {
+        display: none;
+    }
 }
 
 /* ------------------------- footer -------------------------- */
@@ -210,10 +221,35 @@ small.forgot-password a {
 
 /* -------------------------- categories -------------------------- */
 
+.section-categories .card {
+    margin-bottom: 2em;
+    border-radius: 12px !important; 
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.03);
+}
 
+.card-img, .card-img-top {
+    border-top-left-radius:  calc(.25rem - -7px) !important;
+    border-top-right-radius: calc(.25rem - -7px) !important;
+}
 
 /* -------------------------- User Profile -------------------------- */
 .account-img {
     height: 125px;
     width: 125px;
+}
+
+/* -------------------------- Listings -------------------------- */
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+}
+
+article.media.content-section.listing {
+    background: var(--brand-light-grey);
+    margin: 5px 0;
+    padding: 15px 0px 0px 15px;
 }
