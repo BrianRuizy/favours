@@ -22,49 +22,48 @@ body {
 /* -------------------------- custom brand colors -------------------------- */
 /* https://coolors.co/ffffff-efefef-d7dcdd-6c8ead-e1306c */
 :root {
-    --brand-light-grey: #EFEFEF;
-    /* Cultured */
+    --brand-grey: #EFEFEF;
+    /* brand-grey */
     --brand-dark-grey: #718084;
     /* Slate Grey */
     --brand-blue: #6C8EAD;
     /* Shadow Blue */
     --brand-pink: #E1306C;
-    /* Razzmatazz */
+    /* brand-pink */
 }
 
-.btn-razzmatazz {
+.btn-brand-pink {
     background-color: var(--brand-pink) !important;
     color: #fff !important;
 }
 
-.btn-razzmatazz:hover {
+.btn-brand-pink:hover {
     background-color: #ce3367 !important;
 }
 
-.text-razzmatazz {
+.text-brand-pink {
     color: var(--brand-pink) !important;
 }
 
-.bg-razzmatazz {
+.bg-brand-pink {
     color: var(--brand-pink) !important;
 }
 
-
-.btn-cultured {
-    background-color: var(--brand-light-grey) !important;
+.btn-brand-grey {
+    background-color: var(--brand-grey) !important;
     color: #000 !important;
 }
 
-.btn-cultured:hover {
+.btn-brand-grey:hover {
     background-color: #d6d6d6 !important;
 }
 
-.bg-cultured {
-    background-color: var(--brand-light-grey) !important;
+.bg-brand-grey {
+    background-color: var(--brand-grey) !important;
 }
 
-.text-cultured {
-    color: var(--brand-light-grey) var(--brand-light-grey) !important;
+.text-brand-grey {
+    color: var(--brand-grey) var(--brand-grey) !important;
 }
 
 
@@ -115,7 +114,7 @@ a.navbar-brand p {
 }
 
 .navbar .btn:hover {
-    box-shadow: 0 0 0px 4px var(--brand-light-grey);
+    box-shadow: 0 0 0px 4px var(--brand-grey);
 }
 
 .navbar .btn-user {
@@ -172,7 +171,7 @@ a.navbar-brand p {
 hr.divider {
     overflow: visible;
     border: none;
-    border-top: 1px solid var(--brand-light-grey);
+    border-top: 1px solid var(--brand-grey);
     text-align: center;
     margin: 2rem 0;
 }
@@ -196,7 +195,7 @@ hr.divider:after {
 }
 
 .btn.btn-login:hover, .btn.btn-signup:hover {
-    box-shadow: 0 0 0px 4px var(--brand-light-grey);
+    box-shadow: 0 0 0px 4px var(--brand-grey);
 }
 
 small.forgot-password a {
@@ -211,7 +210,7 @@ small.forgot-password a {
 }
 
 .social-login a.btn.btn-block:hover {
-    background-color: var(--brand-light-grey);
+    background-color: var(--brand-grey);
     border: 1px solid var(--brand-dark-grey);
 }
 
@@ -249,7 +248,7 @@ small.forgot-password a {
 }
 
 article.media.content-section.listing {
-    background: var(--brand-light-grey);
+    background: var(--brand-grey);
     margin: 5px 0;
     padding: 15px 0px 0px 15px;
 }
