@@ -54,6 +54,11 @@ body {
     color: #000 !important;
 }
 
+.btn-outline-darkgrey {
+    border-color: var(--brand-dark-grey) !important;
+    color: #000 !important;
+}
+
 .btn-brand-grey:hover {
     background-color: #d6d6d6 !important;
 }
