@@ -249,6 +249,7 @@ small.forgot-password a {
 
 /* -------------------------- Listings -------------------------- */
 .article-img {
+    object-fit: cove;
     height: 65px;
     width: 65px;
     margin-right: 16px;
@@ -259,3 +260,49 @@ article.media.content-section.listing {
     margin: 5px 0;
     padding: 15px 0px 0px 15px;
 }
+
+
+
+
+
+
+  
+  .hs > li,
+  .item {
+    scroll-snap-align: center;
+    padding: calc(var(--gutter) / 2 * 1.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  :root {
+    --gutter: 20px;
+  }
+
+  .hs {
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
+    grid-template-rows: minmax(150px, 1fr);
+    
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+    margin-bottom: calc(-.5 * var(--gutter));
+  }
+  
+  .hs:before,
+  .hs:after {
+    content: '';
+  }
+  
+  /* Hide scrollbar */
+  .hide-scroll {
+    overflow-y: hidden;
+    margin-bottom: calc(-.1 * var(--gutter));
+  }
+  
