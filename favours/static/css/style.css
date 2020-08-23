@@ -84,7 +84,7 @@ body {
 }
 
 .section {
-    padding: 6em 0em;
+    padding: 2em 0em;
 }
 
 /* ------------------------- navbar -------------------------- */
@@ -116,7 +116,6 @@ a.navbar-brand p {
     margin-right: 1rem;
 }
 
-
 .navbar .btn {
     border-radius: 1.3125rem;
 }
@@ -136,6 +135,12 @@ a.navbar-brand p {
     border: 1px solid var(--brand-);
 }
 
+.dropdown-menu.show {
+    border-radius: 1em;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #dadce0;
+}
+
 .dropdown-toggle::after {
     vertical-align: 0.155em !important;
 }
@@ -151,7 +156,7 @@ a.navbar-brand p {
     background-color: #000000;
     color: #fff;
     margin-top: 2em;
-    padding: 6em 0 4em 0;
+    padding: 5em 0 2em 0;
 }
 
 .footer ul {
@@ -172,7 +177,7 @@ a.navbar-brand p {
 
 /* -------------------------- login form -------------------------- */
 .card {
-    border-radius: 8px !important;
+    border-radius: 1em !important;
     border: 1px solid #dadce0 !important;
 }
 
@@ -225,11 +230,25 @@ small.forgot-password a {
     font-weight: bold;
 }
 
+/* -------------------------- call-to-action -------------------------- */
+
+.cta img.card-img {
+    object-fit: cover;
+    height: 23em;
+    border-radius: inherit;
+}
+
+.cta .card-img-overlay {
+    line-height: 20px;
+    max-width: 60%;
+    padding: 6em 0em 0em 3em;
+}
+
 /* -------------------------- categories -------------------------- */
 
 .section-categories .card {
     margin-bottom: 2em;
-    border-radius: 12px !important; 
+    border-radius: 1em !important; 
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -241,6 +260,42 @@ small.forgot-password a {
     border-top-right-radius: calc(.25rem - -7px) !important;
 }
 
+.hs>div,
+.item {
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+:root {
+    --gutter: 20px;
+}
+
+.hs {
+    display: grid;
+    grid-gap: calc(var(--gutter) / 1.5);
+    grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
+    grid-template-rows: minmax(150px, 1fr);
+
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    margin-bottom: calc(-.5 * var(--gutter));
+    margin-left: -10px;
+}
+
+.hs:before,
+.hs:after {
+    content: '';
+}
+
+/* Hide scrollbar */
+.hide-scroll {
+    overflow-y: hidden;
+    margin-bottom: calc(-.1 * var(--gutter));
+}
+
+
 /* -------------------------- User Profile -------------------------- */
 .account-img {
     height: 125px;
@@ -249,7 +304,7 @@ small.forgot-password a {
 
 /* -------------------------- Listings -------------------------- */
 .article-img {
-    object-fit: cove;
+    object-fit: cover;
     height: 65px;
     width: 65px;
     margin-right: 16px;
@@ -260,49 +315,3 @@ article.media.content-section.listing {
     margin: 5px 0;
     padding: 15px 0px 0px 15px;
 }
-
-
-
-
-
-
-  
-  .hs > li,
-  .item {
-    scroll-snap-align: center;
-    padding: calc(var(--gutter) / 2 * 1.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border-radius: 8px;
-  }
-
-  :root {
-    --gutter: 20px;
-  }
-
-  .hs {
-    display: grid;
-    grid-gap: calc(var(--gutter) / 2);
-    grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
-    grid-template-rows: minmax(150px, 1fr);
-    
-    overflow-x: scroll;
-    scroll-snap-type: x proximity;
-    padding-bottom: calc(.75 * var(--gutter));
-    margin-bottom: calc(-.5 * var(--gutter));
-  }
-  
-  .hs:before,
-  .hs:after {
-    content: '';
-  }
-  
-  /* Hide scrollbar */
-  .hide-scroll {
-    overflow-y: hidden;
-    margin-bottom: calc(-.1 * var(--gutter));
-  }
-  

@@ -3,7 +3,22 @@
 {% load socialaccount %}
 {% block title %} | Home{% endblock title %}
 {% block content %}
+    <div class="section cta">
+        <div class="container">
+            <div class="card cta text-white">
+                <img class="card-img" src="https://a0.muscache.com/im/pictures/4b5b2c9e-9d97-4fb7-8826-1529dacb13df.jpg?im_w=1200" alt="Card image">
+                <div class="card-img-overlay">
+                    <h2 class="card-title font-weight-bold">Card title</h2>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text text-light">Last updated 3 mins ago</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
     {% include "listings/categories.html" %}
+
     <div class="section">
         <div class="container">
             {% for post in posts %}
@@ -11,7 +26,7 @@
                 <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" href="#">{{ post.author }}</a>
+                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
                         <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                     </div>
                     <h3><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
@@ -24,11 +39,15 @@
                 <div class="mt-4">
                     <p class="btn mb-4">{{ page_obj.number }}/{{ paginator.num_pages }}</p>
                     {% if page_obj.has_previous %}
-                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.previous_page_number }}">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </a>
                     {% endif %}
                     
                     {% if page_obj.has_next %}
-                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.next_page_number }}">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     {% endif %}
                 </div>
             {% endif %}
