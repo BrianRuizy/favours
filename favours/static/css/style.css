@@ -98,9 +98,6 @@ body {
     transition: box-shadow 0.3s cubic-bezier(0.35, 0, 0.65, 1) 0s;
 }
 
-.navbar-light .navbar-brand {
-    color: var(--brand-pink);
-}
 
 a.navbar-brand {
     font-size: 1.5rem;
@@ -247,17 +244,20 @@ small.forgot-password a {
 /* -------------------------- categories -------------------------- */
 
 .section-categories .card {
-    margin-bottom: 2em;
+    text-align: center;
+    height: 8em;
+    line-height: 2px;
     border-radius: 1em !important; 
-    box-shadow:
+    /* box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.03);
+    0 12.5px 10px rgba(0, 0, 0, 0.03); */
 }
 
-.card-img, .card-img-top {
-    border-top-left-radius:  calc(.25rem - -7px) !important;
-    border-top-right-radius: calc(.25rem - -7px) !important;
+.section-categories img.card-img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1em;
 }
 
 .hs>div,
@@ -277,11 +277,10 @@ small.forgot-password a {
     grid-gap: calc(var(--gutter) / 1.5);
     grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
     grid-template-rows: minmax(150px, 1fr);
-
     overflow-x: scroll;
     scroll-snap-type: x proximity;
     margin-bottom: calc(-.5 * var(--gutter));
-    margin-left: -10px;
+    margin-left: -20px;
 }
 
 .hs:before,
