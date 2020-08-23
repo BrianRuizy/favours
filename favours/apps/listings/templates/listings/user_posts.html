@@ -1,0 +1,37 @@
+<!-- templates/user_posts.html -->
+{% extends "base.html" %}
+{% load socialaccount %}
+{% block title %} | User Posts{% endblock title %}
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <h2 class="mb-2">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>
+            {% for post in posts %}
+            <article class="media content-section listing">
+                <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                    <h3><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
+                    <p class="article-content">{{ post.content }}</p>
+                </div>
+            </article>
+            {% endfor %}
+
+            {% if is_paginated %}
+                <div class="mt-4">
+                    <p class="btn mb-4">{{ page_obj.number }}/{{ paginator.num_pages }}</p>
+                    {% if page_obj.has_previous %}
+                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                    {% endif %}
+                    
+                    {% if page_obj.has_next %}
+                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
