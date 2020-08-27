@@ -13,7 +13,7 @@
             <div class="text-center pb-2">
                 <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
-                    <h3 class="mb-0 font-weight-bold">{% trans "Sign Out" %}</h3>
+                    <h3 class="mb-0">{% trans "Sign Out" %}</h3>
                     <p>{% trans 'Are you sure you want to sign out?' %}</p>
                     {{ form | crispy }}
                     <button class="btn btn-block btn-logout btn-gradient primaryAction" type="submit">{% trans 'Log out' %}</button>

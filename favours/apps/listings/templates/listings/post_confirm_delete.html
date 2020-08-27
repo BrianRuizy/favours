@@ -7,7 +7,7 @@
             <div class="text-center pb-2">
                 <form method="POST">
                     {% csrf_token %}
-                    <h3 class="mb-0 font-weight-bold">{% trans "Delete Post" %}</h3>
+                    <h3 class="mb-0">{% trans "Delete Post" %}</h3>
                     <p>{% trans 'Are you sure you want to delete your post ' %}<i>{{ object.title }}</i>?</p>
                     
                     <div class="form-group">
