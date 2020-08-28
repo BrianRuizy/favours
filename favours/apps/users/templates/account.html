@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+
+{% block title %} | Account{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>Account</h2>
+                <p>
+                    <strong>{{ user.first_name | default:user.username}}, </strong>{{ user.email }}
+                    <br>Looking for your<a href="{% url 'profile' %}"> <u>Profile</u></a>?
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section section-account-settings pt-0">
+        <div class="card-deck">
+            <div class="card text-center box-shadow">
+                <div class="card-body">
+                    <p class="card-text"><img src="https://img.icons8.com/cotton/48/000000/name--v2.png"/></p>
+                    <h5 class="card-title"><a  href="{% url 'account_personal_info' %}">Personal Info</a></h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card text-center box-shadow">
+                <div class="card-body">
+                    <p class="card-text"><img src="https://img.icons8.com/cotton/48/000000/lock--v1.svg"/></p>
+                    <h5 class="card-title "><a href="{% url 'account_reset_password' %}">Login & Privacy</a></h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card text-center box-shadow">
+                <div class="card-body">
+                    <p class="card-text"><img src="https://img.icons8.com/cotton/48/000000/jingle-bell--v2.png"/></p>
+                    <h5 class="card-title"><a>Notifications</a></h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endblock content %}

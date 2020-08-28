@@ -7,7 +7,7 @@
 {% block content %}
 <div class="section section-login">
     <div class="container">
-        <div class="card p-4 mx-auto col-lg-5 box-shadow">
+        <div class="card p-4 mx-auto col-lg-5">
             <div class="text-center pb-2">
                 <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
                 <h3 class="mb-0">Welcome back {{ user.Username }}</h3>
@@ -18,7 +18,6 @@
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
-                
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}

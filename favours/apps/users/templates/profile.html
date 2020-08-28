@@ -16,7 +16,7 @@
                         <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="profile">
                     </div>
                     <div class="col-md-10 ">
-                        <h1>Profile</h1>
+                        <h2>Profile</h2>
                         <p>Welcome, {{ user.first_name | default:user.username}}!</p>
                         <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                     </div>
@@ -26,8 +26,8 @@
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <fieldset class="form-group">
-                                {{ u_form | crispy }}
-                                {{ p_form | crispy }}
+                                {{ user_form | crispy }}
+                                {{ profile_form | crispy }}
                             </fieldset>
                             <div class="form-group">
                                 <button class="btn btn-outline-secondary" type="submit">Update</button>

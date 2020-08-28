@@ -98,7 +98,7 @@ p.brand, a.brand {
 }
 
 .section {
-    padding: 2em 0em ;
+    padding: 3em 0 1.5em 0;
 }
 
 /* ------------------------- navbar -------------------------- */
@@ -163,12 +163,22 @@ a.navbar-brand p {
     }
 }
 
+/* -------------------------- Breadcrumb Navigation -------------------------- */
+ol.breadcrumb {
+    background: none;
+    padding: 0 0 0 3px ;
+}
+
+li.breadcrumb-item a{
+    color: var(--brand-dark-grey);
+    font-weight: bold;
+}
 /* ------------------------- footer -------------------------- */
 .footer {
     background-color: #000000;
     color: #fff;
     margin-top: 2em;
-    padding: 5em 0 2em 0;
+    padding: 6em 0 2em 0;
 }
 
 .footer ul {
