@@ -98,7 +98,7 @@ p.brand, a.brand {
 }
 
 .section {
-    padding: 3em 0em;
+    padding: 2em 0em ;
 }
 
 /* ------------------------- navbar -------------------------- */
@@ -110,6 +110,10 @@ p.brand, a.brand {
     top: 0px;
     background: rgb(255, 255, 255);
     transition: box-shadow 0.3s cubic-bezier(0.35, 0, 0.65, 1) 0s;
+}
+
+.navbar-toggler {
+    border: none !important;
 }
 
 a.navbar-brand {
@@ -185,7 +189,7 @@ a.navbar-brand p {
 
 /* -------------------------- login form -------------------------- */
 .card {
-    border-radius: .75em !important;
+    border-radius: .8em !important;
     border: 1px solid #dadce0 !important;
 }
 
@@ -258,6 +262,16 @@ small.forgot-password a {
     width: 125px;
 }
 
+/* -------------------------- Account-settings -------------------------- */
+
+p.card-text {
+    margin-bottom: .5em;
+}
+
+.section-account-settings .card {
+    line-height: 1em;
+}
+
 /* -------------------------- Listings -------------------------- */
 .article-img {
     object-fit: cover;
@@ -273,8 +287,8 @@ article.media.content-section.listing {
 
 .box-shadow {
     box-shadow:
-    0 1.8px 1.2px rgba(0, 0, 0, 0.034),
+    0 0.8px 1.2px rgba(0, 0, 0, 0.034),
     0 2.7px 3.3px rgba(0, 0, 0, 0.048),
-    0 6.5px 7px rgba(0, 0, 0, 0.06),
-    0 10.3px 12.9px rgba(0, 0, 0, 0.072) !important;
+    0 4.5px 7px rgba(0, 0, 0, 0.06),
+    0 9.3px 12.9px rgba(0, 0, 0, 0.072) !important;
 }

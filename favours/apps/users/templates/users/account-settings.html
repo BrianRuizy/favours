@@ -8,20 +8,20 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-    <div class="section section-profile">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 ">
-                    <h1>Account</h1>
-                    <p>
-                        <span class="font-weight-bold">{{ user.first_name | default:user.username}},</span>
-                        {{ user.email }}<br>
-                        Looking for your<a href="{% url 'profile' %}"> Profile?</a>
-                    </p>
-                </div>
+<div class="section section-account-settings">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mt-1">
+                <h1>Account</h1>
+                <p>
+                    <span class="font-weight-bold">{{ user.first_name | default:user.username}},</span>
+                    {{ user.email }}<br>
+                    Looking for your<a href="{% url 'profile' %}"> <u>Profile</u></a>?
+                </p>
             </div>
+        </div>
 
-            <div class="row">
+        <!-- <div class="row">
                 <div class="col-sm">
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -34,48 +34,46 @@
                         </div>
                     </form>
                 </div>
+            </div> -->
+    </div>
+</div>
+<div class="section section-account-settings pt-0">
+    <div class="container">
+        <div class="card-deck">
+            <div class="card text-center box-shadow">
+                <div class="card-body">
+                    <p class="card-text"><img src="https://img.icons8.com/cotton/48/000000/name--v2.png"/></p>
+                    <h5 class="card-title"><a>Personal Info</a></h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card text-center box-shadow">
+                <div class="card-body">
+                    <p class="card-text"><img src="https://img.icons8.com/cotton/48/000000/lock--v1.svg"/></p>
+                    <h5 class="card-title "><a class="text-dark" href="{% url 'account_reset_password' %}">Privacy</a></h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card text-center box-shadow">
+                <div class="card-body">
+                    <p class="card-text"><img src="https://img.icons8.com/cotton/48/000000/jingle-bell--v2.png"/></p>
+                    <h5 class="card-title"><a>Notifications</a></h5>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="section">
-        <div class="container">
-            <div class="card-deck">
-                <div class="card text-center box-shadow">
-                    <div class="card-body">
-                        <p class="card-text">🧑</p>
-                        <h5 class="card-title">Personal Info</h5>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-
-                    </div>
-                </div>
-                <div class="card text-center box-shadow" >
-                    <div class="card-body">
-                        <p class="card-text">🔐</p>
-                        <h5 class="card-title"><a href="{% url 'account_reset_password' %}">Privacy</a></h5>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-
-                    </div>
-                </div>
-                <a class="card text-center box-shadow">
-                    <div class="card-body">
-                        <p class="card-text">🔔</p>
-                        <h5 class="card-title">Notifications</h5>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </a>
-
-            </div>
-            
-        </div>
-    </div>
+</div>
 {% else %}
-    <div class="section">
-        <div class="container">
-            <h1>Sign In</h1>
-            <a href="{% provider_login_url 'github' %}">Continue using GitHub <i class="fa fa-github" aria-hidden="true"></i>
-            </a><br>
-            <a href="{% provider_login_url 'google' %}">Continue using Google <i class="fa fa-google" aria-hidden="true"></i></a>
-        </div>
+<div class="section">
+    <div class="container">
+        <h1>Sign In</h1>
+        <a href="{% provider_login_url 'github' %}">Continue using GitHub <i class="fa fa-github"
+                aria-hidden="true"></i>
+        </a><br>
+        <a href="{% provider_login_url 'google' %}">Continue using Google <i class="fa fa-google"
+                aria-hidden="true"></i></a>
     </div>
+</div>
 {% endif %}
-{% endblock content %} 
+{% endblock content %}
