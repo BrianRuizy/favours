@@ -98,7 +98,7 @@ p.brand, a.brand {
 }
 
 .section {
-    padding: 2em 0em;
+    padding: 3em 0em;
 }
 
 /* ------------------------- navbar -------------------------- */
@@ -185,7 +185,7 @@ a.navbar-brand p {
 
 /* -------------------------- login form -------------------------- */
 .card {
-    border-radius: 1em !important;
+    border-radius: .75em !important;
     border: 1px solid #dadce0 !important;
 }
 
@@ -269,4 +269,12 @@ small.forgot-password a {
 article.media.content-section.listing {
     margin: 5px 0;
     padding: 15px 0px 0px 15px;
+}
+
+.box-shadow {
+    box-shadow:
+    0 1.8px 1.2px rgba(0, 0, 0, 0.034),
+    0 2.7px 3.3px rgba(0, 0, 0, 0.048),
+    0 6.5px 7px rgba(0, 0, 0, 0.06),
+    0 10.3px 12.9px rgba(0, 0, 0, 0.072) !important;
 }
