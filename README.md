@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Logo" src="https://media.giphy.com/media/YOA3ZSzUVvj4ByYXEv/giphy.gif" width="">
+    <img alt="Logo" src="https://media.giphy.com/media/Vh2ac0wlNuC7nz2b2N/giphy.gif" width="">
 </h1>
 
 ## About
