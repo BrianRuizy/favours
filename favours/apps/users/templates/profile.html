@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-md-10 ">
                         <h2>Profile</h2>
-                        <p>Welcome, {{ user.first_name | default:user.username}}!</p>
+                        <p>Hey, {{ user.first_name | default:user.username}}!</p>
                         <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                     </div>
                 </div>
@@ -26,7 +26,6 @@
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <fieldset class="form-group">
-                                {{ user_form | crispy }}
                                 {{ profile_form | crispy }}
                             </fieldset>
                             <div class="form-group">

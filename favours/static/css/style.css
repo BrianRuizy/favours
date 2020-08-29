@@ -166,12 +166,18 @@ a.navbar-brand p {
 /* -------------------------- Breadcrumb Navigation -------------------------- */
 ol.breadcrumb {
     background: none;
-    padding: 0 0 0 3px ;
+    padding: 0 0 0 3px;
+    margin: 0em;
 }
 
 li.breadcrumb-item a{
     color: var(--brand-dark-grey);
     font-weight: bold;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">" !important;
+    color: var(--brand-dark-grey);
 }
 /* ------------------------- footer -------------------------- */
 .footer {

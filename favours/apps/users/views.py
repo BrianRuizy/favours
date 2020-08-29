@@ -45,19 +45,8 @@ def profile(request):
 
 @login_required
 def account(request):
-    if request.method == 'POST':
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        if u_form.is_valid():
-            u_form.save()
-            messages.success(request, 'Your account has been updated.')
-            return redirect('account')
-    else:
-        u_form = UserUpdateForm(instance=request.user)
 
-    context = {
-        'user_form': u_form
-        }
-    return render(request, 'account.html', context=context)
+    return render(request, 'account.html', context={})
 
 
 @login_required
