@@ -2,6 +2,8 @@
     <img alt="Logo" src="https://media.giphy.com/media/Vh2ac0wlNuC7nz2b2N/giphy.gif" width="">
 </h1>
 
+[![Gitter chat](https://img.shields.io/badge/Chat-Gitter-ff69b4.svg?label=Chat&logo=gitter)](https://gitter.im/favours-io/community#)
+
 ## About
 a scalable local marketplace where users post small-jobs (favours) in exchange for cash; currently in beta.
 Hosted on AWS, with Docker, and using Django ORM with built-in REST API which is then consumed by Flutter for native mobile application.
