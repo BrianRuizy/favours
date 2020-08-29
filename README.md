@@ -1,17 +1,15 @@
 <h1 align="center">
-    <img alt="Logo" src="https://github.com/BrianRuizy/favours/blob/master/favours/static/assets/favours_light.png" width="100"> </br>
-    Favours
+    <img alt="Logo" src="https://media.giphy.com/media/elUWc9Gx9hWPUa0Z9H/giphy.gif" width="">
 </h1>
 
+## About
+a scalable local marketplace where users post small-jobs (favours) in exchange for cash; currently in beta.
+Hosted on AWS, with Docker, and using Django ORM with built-in REST API which is then consumed by Flutter for native mobile application.
 ## Installation
 
-Prerequisites for installation django web-application include Python 3.7+, and pip.
+Prerequisites for installation of django web-application include Python 3.5+, and pip (package manager).
 
 1. Fork and clone repo to local system
-
-```bash
-git clone https://github.com/<your-username>/favours.git
-```
 
 2. Create local virtual environment inside project directory, and activate.
 
