@@ -36,7 +36,7 @@ p.brand, a.brand {
 /* -------------------------- custom brand colors -------------------------- */
 /* https://coolors.co/ffffff-efefef-d7dcdd-6c8ead-e1306c */
 :root {
-    --brand-grey: #EFEFEF;
+    --brand-grey: #F1F1F1;
     /* brand-grey */
     --brand-dark-grey: #718084;
     /* Slate Grey */
@@ -148,7 +148,7 @@ a.navbar-brand p {
 }
 
 .dropdown-menu.show {
-    border-radius: 1em;
+    border-radius: .8em;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.03);
     border: 1px solid #dadce0;
 }
@@ -285,7 +285,35 @@ p.card-text {
 }
 
 .section-account-settings .card {
-    line-height: 1em;
+    line-height: .5em;
+}
+
+.section-account-settings .card-title {
+    margin: 1em auto 0em auto;
+}
+
+.section-account-settings .card-body a {
+    color: black;
+}
+
+@media screen and (max-width: 420px) {
+    .section-account-settings .card {
+        width: 100%;
+        display: -webkit-inline-box;
+        border: none !important;
+        border-radius: 0 !important;
+        border-bottom: 2px solid var(--brand-grey) !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+
+    .section-account-settings .card-title {
+        margin: auto 0;
+    }
+
+    .section-account-settings .card-body {
+        text-align: left;
+    }
 }
 
 /* -------------------------- Listings -------------------------- */
@@ -305,6 +333,5 @@ article.media.content-section.listing {
     box-shadow:
     0 0.8px 1.2px rgba(0, 0, 0, 0.034),
     0 2.7px 3.3px rgba(0, 0, 0, 0.048),
-    0 4.5px 7px rgba(0, 0, 0, 0.06),
-    0 9.3px 12.9px rgba(0, 0, 0, 0.072) !important;
+    0 4.5px 7px rgba(0, 0, 0, 0.06) !important;
 }
