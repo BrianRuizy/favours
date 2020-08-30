@@ -5,8 +5,8 @@ RUN apk update && \
     apk add --virtual build-deps gcc python3-dev musl-dev && \
     apk add postgresql-dev && \
     apk add build-base \
-    apk add libjpeg-dev
-
+    apk add jpeg-dev zlib-dev
+    
 EXPOSE 8000
 
 ADD . /favours
