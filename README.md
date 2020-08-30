@@ -50,7 +50,7 @@ docker push <DOCKERHUB_USERNAME>/favours
 2. Connect to the AWS EC2 Linux instance using given [SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html), then pull and run the Docker container.
 
 ```bash
-ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-IPv6-address
+ssh -i /path/my-key-pair.pem ec2-user@my-instance-IPv6-address
 ```
 
 ```bash
