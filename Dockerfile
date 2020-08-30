@@ -15,9 +15,9 @@ RUN apk update
 
 RUN apk add postgresql-dev gcc python3-dev musl-dev
 
-RUN python -m pip install --upgrade pip
+RUN apt-get install libjpeg-dev zlib1g-dev
 
-RUN apt install libjpeg-dev zlib1g-dev
+RUN python -m pip install --upgrade pip
 
 RUN python -m pip install -r requirements.txt
 
