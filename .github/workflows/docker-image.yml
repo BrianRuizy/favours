@@ -13,7 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      env:
-        DEBUG:  ${{ secrets.DEBUG }}
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      environment:
+        - SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
