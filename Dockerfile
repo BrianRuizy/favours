@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.6-alpine
 
 RUN python -m pip install --upgrade pip
 RUN python -m pip install --upgrade pillow
