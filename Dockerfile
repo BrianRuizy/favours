@@ -30,8 +30,6 @@ RUN python -m pip install --upgrade pip
 COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 
-ENV SECRET_KEY=${{ secrets.SECRET_KEY }}
-
 RUN python manage.py migrate
 
 CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
