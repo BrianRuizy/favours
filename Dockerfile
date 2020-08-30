@@ -4,9 +4,21 @@ FROM python:3.7-alpine
 RUN apk update && \
     apk add --virtual build-deps gcc python3-dev musl-dev && \
     apk add postgresql-dev && \
-    apk add build-base \
-    apk add jpeg-dev zlib-dev
-    
+    apk add build-base 
+
+RUN apk --no-cache add python3 \
+    # Pillow dependencies
+    jpeg-dev \
+    zlib-dev \
+    freetype-dev \
+    lcms2-dev \
+    openjpeg-dev \
+    tiff-dev \
+    tk-dev \
+    tcl-dev \
+    harfbuzz-dev \
+    fribidi-dev
+
 EXPOSE 8000
 
 ADD . /favours
