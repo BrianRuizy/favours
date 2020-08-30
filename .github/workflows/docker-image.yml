@@ -12,8 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Add environment variables to .env  
       run: |
         echo DEBUG=${{ secrets.DEBUG }} >> .env
         echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
