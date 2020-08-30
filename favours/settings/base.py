@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '45.79.58.68:8000' '127.0.0.1', '192.168.1.98', 'ec2-54-187-186-90.us-west-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', '45.79.58.68' '127.0.0.1', '192.168.1.98']
 
 
 # Application definition
@@ -101,12 +101,8 @@ WSGI_APPLICATION = 'favours.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'bruizDB',
-        'PASSWORD': 'SzS9TkiA',  # Test DB
-        'HOST': 'database-test.cnqtmzrxdbfn.us-west-2.rds.amazonaws.com',  # AWS RDS endpoint
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
