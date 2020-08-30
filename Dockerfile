@@ -1,6 +1,10 @@
 FROM python:3.7-alpine
 
-MAINTAINER Brian Ruiz <brianruizy.com>
+## install dependencies
+RUN apk update && \
+    apk add --virtual build-deps gcc python-dev musl-dev && \
+    apk add postgresql-dev && \
+    apk add build-base
 
 EXPOSE 8000
 
@@ -10,6 +14,9 @@ ADD . /favours
 
 WORKDIR /favours
 
+## add and install requirements
+RUN pip install --upgrade pip
+COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
 
 RUN python manage.py migrate
