@@ -41,23 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
-    'crispy_forms', 
+    'crispy_forms',
 
     # custom apps go here...
     'favours.apps.users',
     'favours.apps.listings',
 ]
 
-SOCIALACCOUNT_PROVIDERS =  { 
-    'facebook':
-        {'METHOD': 'oauth2',
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
         'SCOPE': ['email'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'LOCALE_FUNC': lambda request: 'en_US',
@@ -101,12 +101,12 @@ WSGI_APPLICATION = 'favours.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'postgres',
-    'USER': 'bruizDB',
-    'PASSWORD': 'SzS9TkiA',  # Test DB
-    'HOST': 'database-test.cnqtmzrxdbfn.us-west-2.rds.amazonaws.com',  # AWS RDS endpoint
-    'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'bruizDB',
+        'PASSWORD': 'SzS9TkiA',  # Test DB
+        'HOST': 'database-test.cnqtmzrxdbfn.us-west-2.rds.amazonaws.com',  # AWS RDS endpoint
+        'PORT': '5432',
     }
 }
 
@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    
+
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
