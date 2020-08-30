@@ -15,8 +15,12 @@ RUN apk update
 
 RUN apk add postgresql-dev gcc python3-dev musl-dev
 
-RUN python3 -m pip install -r requirements.txt
+RUN python -m pip install --upgrade pip
 
-RUN python3 manage.py migrate
+RUN python -m pip install --upgrade pillow
 
-CMD [ "python3", "manage.py", "runserver", "0.0.0.0:8000" ]
+RUN pip install -r requirements.txt
+
+RUN python manage.py migrate
+
+CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
