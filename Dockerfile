@@ -1,13 +1,13 @@
 FROM python:3.7-alpine
 
-## install dependencies
+## psycopg2 dependencies
 RUN apk update && \
     apk add --virtual build-deps gcc python3-dev musl-dev && \
     apk add postgresql-dev && \
     apk add build-base 
 
+# Pillow dependencies
 RUN apk --no-cache add python3 \
-    # Pillow dependencies
     jpeg-dev \
     zlib-dev \
     freetype-dev \
@@ -29,6 +29,8 @@ WORKDIR /favours
 RUN python -m pip install --upgrade pip
 COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN pip install -r requirements.txt
+
+ENV SECRET_KEY=${{ secrets.SECRET_KEY }}
 
 RUN python manage.py migrate
 
