@@ -329,9 +329,12 @@ article.media.content-section.listing {
     padding: 15px 0px 0px 15px;
 }
 
-.box-shadow {
+.soft-shadow {
     box-shadow:
-    0 0.8px 1.2px rgba(0, 0, 0, 0.034),
-    0 2.7px 3.3px rgba(0, 0, 0, 0.048),
-    0 4.5px 7px rgba(0, 0, 0, 0.06) !important;
+    0 2.8px 0.2px rgba(0, 0, 0, 0.005), 
+    0 6.7px 5.3px rgba(0, 0, 0, 0.004), 
+    0 12.5px 10px rgba(0, 0, 0, 0.015), 
+    -1px 7px 20px rgba(0, 0, 0, 0.022), 
+    0px 9px 20px rgba(0, 0, 0, 0.026), 
+    -1px 6px 20px rgba(0, 0, 0, 0.01) !important;
 }
