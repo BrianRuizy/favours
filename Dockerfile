@@ -6,19 +6,6 @@ RUN apk update && \
     apk add postgresql-dev && \
     apk add build-base 
 
-# Pillow dependencies
-RUN apk --no-cache add python3 \
-    jpeg-dev \
-    zlib-dev \
-    freetype-dev \
-    lcms2-dev \
-    openjpeg-dev \
-    tiff-dev \
-    tk-dev \
-    tcl-dev \
-    harfbuzz-dev \
-    fribidi-dev
-
 EXPOSE 8000
 
 ADD . /favours
