@@ -6,53 +6,66 @@
 [![MIT License](https://camo.githubusercontent.com/a307f74a14e41e762300323414ddef81f3d53ae2/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f736f757263657265722d696f2f736f757263657265722d6170702e7376673f636f6c6f72423d666630303030)](https://github.com/favours-io/favours/blob/master/LICENSE)
 
 ## About
-a scalable local marketplace where users post small-jobs (favours) in exchange for cash; currently in beta.
-Hosted on AWS, with Docker, and using Django ORM with built-in REST API which is then consumed by Flutter for native mobile application.
-## Installation
 
-Prerequisites for installation of django web-application include Python 3.5+, and pip (package manager).
+A local marketplace where users post small-jobs (favours) in exchange for cash; currently in **beta**. Favours-io plays out in the domain of collaborative consumption. Need a favour? Or want to make some quick cash committing to a favour? The application aims at bringing local communities together by leveraging local connections you have through existing social networks. Open-source and free.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.7+
+- Pip (package manager)
+
+### Installing
 
 1. Fork and clone repo to local system
 
 2. Create local virtual environment inside project directory, and activate.
 
-```bash
-python -m venv env
+    ```bash
+    python -m venv env
 
-source env/bin/activate  # Linux/Mac
-env/Scripts/activate  # Windows
-```
+    source env/bin/activate  # Linux/Mac
+    env/Scripts/activate  # Windows
+    ```
 
 3. Install dependencies
 
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-4. Run development Django server
+4. Add new **.env** file, at project level. 
 
-```bash
-python manage.py runserver --settings=favours.settings.dev
-```
+    Set DEBUG=True in dev. stage, and USE_S3=False to use local static files (.css, .js).
+    Else, you will require AWS IAM credentials
 
-## Deployment
+    ```env
+    DEBUG=<True or False>
+    SECRET_KEY=<place-secret-key>
+    AWS_STORAGE_BUCKET_NAME=favours-bucket
+    USE_S3=False
+    ```
 
-Deployment is currently manual and tentative, will change whenever CI/CD is employed. Prerequisites include Docker desktop, AWS IAM credentials.
+5. Rady to go! Now run Django
 
-1. Using Docker CLI we will need to tag our image with our username and then push it to Dockerhub. [Reference](https://stackabuse.com/deploying-django-applications-to-aws-ec2-with-docker/).
+    Note: running the Django server without the *--settings=...dev* arg will use static files from S3 bucket
 
-```bash
-docker login
-docker tag favours <DOCKERHUB_USERNAME>/favours
-docker push <DOCKERHUB_USERNAME>/favours
-```
+    ```bash
+    python manage.py runserver --settings=favours.settings.dev
+    ```
 
-2. Connect to the AWS EC2 Linux instance using given [SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html), then pull and run the Docker container.
+## How it Works
 
-```bash
-ssh -i /path/my-key-pair.pem ec2-user@my-instance-IPv6-address
-```
+### Components
 
-```bash
- docker run -d -p 8000:8000 <DOCKERHUB_USERNAME>/favours
- ```
+This back-end codebase is found on on a [Linode](https://www.linode.com/) Linux server with SSH and firewalls (UFW) enabled. Running an Apache http server from Django's WSGI, and serving our static files on [AWS S3](https://aws.amazon.com/s3/). Kudos to [LetsEncrypt](https://letsencrypt.org/) for free SSL!
+
+The goal is to then use Django's built-in REST API to be consumed by Flutter for native mobile application.
+
+## Discussion
+
+Discuss Favours-io in the open [Gitter chat](https://gitter.im/favours-io/community). Propose new ideas, or disuss any already existing features. All constructive conversation is welcomed!
+
+## License
+@ [MIT License](https://github.com/favours-io/favours/blob/master/LICENSE)
