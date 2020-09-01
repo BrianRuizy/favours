@@ -156,7 +156,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Serving static/media files from AWS S3 or locally
 # if developing on static files (.css, .js) set USE_S3_FLAG to False in .env
-USE_S3_FLAG = config('USE_S3', default=False)
+USE_S3_FLAG = config('USE_S3', default=True)
 
 if USE_S3_FLAG == 'True':
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
