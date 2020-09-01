@@ -47,7 +47,7 @@ A local marketplace where users post small-jobs (favours) in exchange for cash; 
     USE_S3=False
     ```
 
-5. Rady to go! Now run Django
+5. Ready to go! Now run Django
 
     Note: running the Django server without the *--settings=...dev* arg will use static files from S3 bucket
 
