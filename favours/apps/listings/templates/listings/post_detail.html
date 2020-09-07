@@ -8,10 +8,10 @@
             <div class="media-body">
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-                    <small class="text-muted">{{ object.date_objected|date:"F d, Y" }}</small>
+                    <small class="text-muted">{{ object.date_objected | date:"F d, Y" }}</small>
                 </div>
-                <h2 class="article-title">{{ object.title }}</h2>
-                <h4>{{ post.price }}</h4>
+                <h4 class="article-title">{{ object.title }}</h4>
+                <h5><span class="badge badge-pill badge-light mr-2">{{ post.category }}</span>${{ post.price }}</h5>
                 <p class="article-content">{{ object.content }}</p>
                 {% if object.author == user %}
                 <div>
