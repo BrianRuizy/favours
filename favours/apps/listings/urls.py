@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (
     PostListView, 
     PostDetailView, 
@@ -16,5 +16,7 @@ urlpatterns = [
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
-    path('about/', views.about, name='listings-about')
+    path('about/', views.about, name='listings-about'),
+    
+    path('', include('favours.apps.listings.rest_api.urls')),
 ]

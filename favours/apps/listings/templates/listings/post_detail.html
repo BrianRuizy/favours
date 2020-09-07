@@ -16,7 +16,7 @@
                 {% if object.author == user %}
                 <div>
                     <a class="btn btn-brand-grey"href="{%  url 'post-update' object.id %}">Update</a>
-                    <a class="btn btn-brand-grey"href="{%  url 'post-delete' object.id %}">Delete</a>
+                    <a class="btn btn-danger"href="{%  url 'post-delete' object.id %}">Delete</a>
                 </div>
                 {% endif %}
             </div>

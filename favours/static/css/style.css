@@ -60,7 +60,7 @@ p.brand, a.brand {
 }
 
 .bg-brand-pink {
-    color: var(--brand-pink) !important;
+    background-color: var(--brand-pink) !important;
 }
 
 .btn-brand-grey {
@@ -89,7 +89,7 @@ p.brand, a.brand {
     background: linear-gradient(45deg, var(--brand-pink), #dc3545);
 }
 
-/* ------------------------- Boostrap, general -------------------------- */
+/* ------------------------- Boostrap, general / override -------------------------- */
 .container {
     margin-right: auto;
     margin-left: auto;

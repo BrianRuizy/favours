@@ -9,7 +9,7 @@ from django.views.generic import (
     DeleteView
 )
 
-from .models import Post, Category
+from .models import Post
 
 
 def home(request):
@@ -48,7 +48,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content', 'price', 'category']
+    fields = ['title', 'description', 'price', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -57,7 +57,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content', 'price', 'category']
+    fields = ['title', 'description', 'price', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
