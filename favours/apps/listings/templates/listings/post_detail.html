@@ -1,3 +1,4 @@
+<!-- templates/upost_detail.html -->
 {% extends "base.html" %}
 {% block content %}
 <div class="section section-delete">
@@ -10,6 +11,7 @@
                     <small class="text-muted">{{ object.date_objected|date:"F d, Y" }}</small>
                 </div>
                 <h2 class="article-title">{{ object.title }}</h2>
+                <h4>{{ post.price }}</h4>
                 <p class="article-content">{{ object.content }}</p>
                 {% if object.author == user %}
                 <div>

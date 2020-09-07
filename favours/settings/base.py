@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'crispy_forms',
     'storages',
+    'rest_framework',
 
     # custom apps go here...
     'favours.apps.users',

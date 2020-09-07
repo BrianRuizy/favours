@@ -9,7 +9,7 @@ from django.views.generic import (
     DeleteView
 )
 
-from .models import Post
+from .models import Post, Category
 
 
 def home(request):
@@ -20,6 +20,7 @@ def home(request):
 
 
 class PostListView(ListView):
+    # paginated list of posts
     model = Post
     template_name = 'home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
@@ -47,7 +48,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'price', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -56,7 +57,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'price', 'category']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
