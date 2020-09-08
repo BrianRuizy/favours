@@ -7,7 +7,7 @@
 
 
 <h5 align="center">
-    <img alt="Logo" src="https://github.com/favours-io/favours/blob/master/favours/static/assets/favours/Favours%20general%20architecture.png?raw=true" width="">
+    <img alt="Logo" src="https://github.com/favours-io/favours/blob/master/favours/static/assets/favours/Favours%20general%20architecture%20clear.png?raw=true" width="">
     <p></p>
 </h5>
 
