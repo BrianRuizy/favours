@@ -7,13 +7,20 @@ from favours.apps.listings.models import Category, Post
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('pk', 'email', 'first_name', 'last_name', 'username')
+        # fields = '__all__'
+        fields = (
+            'pk',
+            'email',
+            'first_name',
+            'last_name',
+            'username'
+        )
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('pk', 'name')
+        fields = '__all__'
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -22,4 +29,13 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('pk', 'title', 'description', 'category', 'author')
+        # fields = '__all__'
+        fields = (
+            'pk',
+            'title',
+            'description',
+            'price',
+            'date_posted',
+            'category',
+            'author'
+        )
