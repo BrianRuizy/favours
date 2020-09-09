@@ -28,7 +28,12 @@
                         <small class="text-muted">{{ post.date_posted | date:"F d, Y" }}</small>
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                    <h5><span class="badge badge-pill badge-light mr-2">{{ post.category }}</span>${{ post.price }}</h5>
+                    <h5>
+                        {% if post.category %}
+                        <span class="badge badge-pill badge-light mr-2">{{ post.category }}</span>
+                        {% endif %}
+                        ${{ post.price }}
+                    </h5>
                     <p class="article-content">{{ post.description }}</p>
                 </div>
                 <span class="border-bottom"></span>

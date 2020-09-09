@@ -11,7 +11,12 @@
                     <small class="text-muted">{{ object.date_objected | date:"F d, Y" }}</small>
                 </div>
                 <h4 class="article-title">{{ object.title }}</h4>
-                <h5><span class="badge badge-pill badge-light mr-2">{{ post.category }}</span>${{ post.price }}</h5>
+                <h5>
+                    {% if post.category %}
+                    <span class="badge badge-pill badge-light mr-2">{{ post.category }}</span>
+                    {% endif %}
+                    ${{ post.price }}
+                </h5>
                 <p class="article-content">{{ object.content }}</p>
                 {% if object.author == user %}
                 <div>

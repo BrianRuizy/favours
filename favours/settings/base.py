@@ -52,9 +52,10 @@ INSTALLED_APPS = [
     'storages',
     'rest_framework',
 
-    # custom apps go here...
-    'favours.apps.users',
-    'favours.apps.listings',
+    # <custom apps>
+    'apps.users',
+    'apps.listings',
+    'apps.api',
 ]
 
 SOCIALACCOUNT_PROVIDERS = {

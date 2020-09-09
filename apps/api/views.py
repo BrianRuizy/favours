@@ -1,7 +1,7 @@
 from rest_framework import generics, filters
 
-from ..models import Post
-from ..serializers import PostSerializer
+from apps.listings.models import Post
+from .serializers import PostSerializer
 
 
 class PostList(generics.ListCreateAPIView):

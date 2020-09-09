@@ -19,7 +19,7 @@ class Post(models.Model):
     description = models.TextField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     date_posted = models.DateTimeField(default=timezone.now)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):

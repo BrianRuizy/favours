@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from favours.apps.users.models import User
-from favours.apps.listings.models import Category, Post
+from apps.users.models import User
+from apps.listings.models import Category, Post
 
 
 class UserSerializer(serializers.ModelSerializer):
