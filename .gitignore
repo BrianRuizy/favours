@@ -9,7 +9,8 @@ media
 # Backup files # 
 *.bak 
 
-# If you are using PyCharm # 
+# If you are using PyCharm #
+.idea/
 .idea/**/workspace.xml 
 .idea/**/tasks.xml 
 .idea/dictionaries 
@@ -63,8 +64,7 @@ coverage.xml
 *.cover 
 .hypothesis/ 
 
-# Jupyter Notebook 
-.ipynb_checkpoints 
+# Jupyter Notebook .ipynb_checkpoints
 
 # pyenv 
 .python-version 
