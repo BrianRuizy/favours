@@ -13,7 +13,7 @@ from .serializers import PostSerializer
 #     serializer_class = PostSerializer
 
 @api_view(['GET', 'POST'])
-def post_list(request):
+def post_list(request, format=None):
     """ Read all posted favours,
     or post a new favour if valid post request """
     if request.method == 'GET':
@@ -28,8 +28,8 @@ def post_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view('GET', 'PUT', 'DELETE')
-def post_detail(request, pk):
+@api_view(['GET', 'PUT', 'DELETE'])
+def post_detail(request, pk, format=None):
     """ Read, update, or delete a specific posted favour """
     try:
         specific_post = Post.objects.get(pk=pk)
