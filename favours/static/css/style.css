@@ -28,11 +28,6 @@ p, a {
     Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-p.brand, a.brand {
-    font-family: 'Source Sans Pro', sans-serif !important;
-    font-weight: 600 !important;
-}
-
 /* -------------------------- custom brand colors -------------------------- */
 /* https://coolors.co/ffffff-efefef-d7dcdd-6c8ead-e1306c */
 :root {
@@ -116,16 +111,23 @@ p.brand, a.brand {
     border: none !important;
 }
 
-a.navbar-brand {
-    font-size: 1.5rem;
-    margin-right: 0;
-}
-
 a.navbar-brand p {
     display: inline;
     margin: 0;
     color: var(--brand-pink);
-    margin-right: 1rem;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.text-logo.align-middle {
+    line-height: 0.7;
+    display: inline-grid;
+}
+
+.text-logo.align-middle small {
+    text-align: right;
+    font-size: 13px;
 }
 
 .navbar .btn {
@@ -158,7 +160,7 @@ a.navbar-brand p {
 }
 
 @media screen and (max-width: 420px) {
-    a.navbar-brand p {
+    a.navbar-brand p, a.navbar-brand small {
         display: none;
     }
 }
