@@ -5,16 +5,21 @@ from apps.listings.models import Category, Post
 
 
 class UserSerializer(serializers.ModelSerializer):
+    posts = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Post.objects.all()
+        )
+
     class Meta:
         model = User
         # fields = '__all__'
-        fields = (
+        fields = [
             'pk',
             'email',
             'first_name',
             'last_name',
             'username'
-        )
+        ]
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -26,16 +31,18 @@ class CategorySerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(required=False, read_only=True)
     author = UserSerializer(required=False, read_only=True)
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Post
         # fields = '__all__'
-        fields = (
+        fields = [
             'pk',
             'title',
             'description',
             'price',
             'date_posted',
             'category',
-            'author'
-        )
+            'author',
+            'owner',
+        ]
