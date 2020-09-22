@@ -20,9 +20,7 @@ class Post(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     date_posted = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    owner = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
-    highlighted = models.TextField()
+    owner = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE, null=False, blank=False)
 
     def __str__(self):
         return self.title

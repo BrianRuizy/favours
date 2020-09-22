@@ -30,7 +30,6 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     category = CategorySerializer(required=False, read_only=True)
-    author = UserSerializer(required=False, read_only=True)
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
@@ -43,6 +42,5 @@ class PostSerializer(serializers.ModelSerializer):
             'price',
             'date_posted',
             'category',
-            'author',
             'owner',
         ]
