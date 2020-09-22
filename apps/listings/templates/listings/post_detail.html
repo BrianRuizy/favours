@@ -4,10 +4,10 @@
 <div class="section section-delete">
     <div class="container">
         <article class="media content-section">
-            <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+            <img class="rounded-circle article-img" src="{{ object.owner.profile.image.url }}">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                    <a class="mr-2" href="{% url 'user-posts' object.owner.username %}">{{ object.owner }}</a>
                     <small class="text-muted">{{ object.date_objected | date:"F d, Y" }}</small>
                 </div>
                 <h4 class="article-title">{{ object.title }}</h4>
@@ -18,7 +18,7 @@
                     ${{ post.price }}
                 </h5>
                 <p class="article-content">{{ object.content }}</p>
-                {% if object.author == user %}
+                {% if object.owner == user %}
                 <div>
                     <a class="btn btn-brand-grey"href="{%  url 'post-update' object.id %}">Update</a>
                     <a class="btn btn-danger"href="{%  url 'post-delete' object.id %}">Delete</a>

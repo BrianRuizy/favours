@@ -21,10 +21,10 @@
             <h3>Recent Posts</h3>
             {% for post in posts %}
             <article class="media content-section listing border-top" >
-                <img class="rounded-circle article-img" href="{{ post.author.profile.url }}" src="{{ post.author.profile.image.url }}">
+                <img class="rounded-circle article-img" href="{{ post.owner.profile.url }}" src="{{ post.owner.profile.image.url }}">
                 <div class="media-body">
                     <div class="article-metadata">
-                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                        <a class="mr-2" href="{% url 'user-posts' post.owner.username %}">{{ post.owner }}</a>
                         <small class="text-muted">{{ post.date_posted | date:"F d, Y" }}</small>
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
