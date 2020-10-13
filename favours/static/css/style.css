@@ -114,10 +114,12 @@ p, a {
 a.navbar-brand p {
     display: inline;
     margin: 0;
-    color: var(--brand-pink);
+    font-size: 27px;
+}
+
+.text-logo {
     font-family: 'Source Sans Pro', sans-serif !important;
-    font-size: 23px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .text-logo.align-middle {
