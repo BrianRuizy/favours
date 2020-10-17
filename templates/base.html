@@ -18,13 +18,22 @@
 </head>
 
 <body>
-    {% include "includes/navbar.html" %}
 
-    {% block content %}
-    {% endblock content %}
-    
-    {% include "includes/footer.html" %}
-    {% include "includes/scripts.html" %}
+    <div class="row">
+        <div class="col-2 bg-primary sidebar   "id="sidebar" >
+
+        </div>
+        <div class="col">
+            {% include "includes/navbar.html" %}
+
+            {% block content %}
+            {% endblock content %}
+            
+            {% include "includes/footer.html" %}
+            {% include "includes/scripts.html" %}
+        </div>
+    </div>
+
     <!-- Specific JS goes HERE -->
     {% block javascripts %}
     {% endblock javascripts %}
