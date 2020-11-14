@@ -1,0 +1,59 @@
+<!-- base template -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favours{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href="{% static 'assets/favicon/favicon.ico' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro" rel="stylesheet">
+
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+</head>
+
+<body>
+    <div class="wrapper">
+        {% include "includes/sidebar.html" %}
+        <!-- Page Content  -->
+        <div id="content">
+            
+            {% include "includes/navbar.html" %}
+
+            {% block content %}
+            {% endblock content %}
+            
+            {% include "includes/footer.html" %}
+            {% include "includes/scripts.html" %}
+        </div>
+    </div>
+    <!-- Specific JS goes HERE -->
+    {% block javascript %}
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+    
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    
+        
+    {% endblock javascript %}
+</body>
+</html>
