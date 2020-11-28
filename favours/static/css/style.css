@@ -183,6 +183,7 @@ li.breadcrumb-item a{
     content: ">" !important;
     color: var(--brand-dark-grey);
 }
+
 /* ------------------------- footer -------------------------- */
 .footer {
     background-color: #000000;
@@ -207,63 +208,7 @@ li.breadcrumb-item a{
     border-top: 1px solid var(--brand-dark-grey);
 }
 
-/* -------------------------- login form -------------------------- */
-.card {
-    border-radius: .8em !important;
-    border: 1px solid #dadce0 !important;
-}
-
-hr.divider {
-    overflow: visible;
-    border: none;
-    border-top: 1px solid var(--brand-grey);
-    text-align: center;
-    margin: 2rem 0;
-}
-
-hr.divider:after {
-    content: 'OR';
-    display: inline-block;
-    position: relative;
-    top: -15px;
-    font-size: 12px;
-    padding: 0 16px;
-    background: #fff;
-    color: #3a3a3a;
-}
-
-.btn.btn-login, .btn.btn-signup, .btn.btn-logout {
-    color: #fff;
-    border-radius: 2rem;
-    margin-top: 2rem;
-}
-
-.btn.btn-login:hover, .btn.btn-signup:hover, .btn.btn-logout:hover {
-    box-shadow: 0 0 0px 4px var(--brand-grey);
-}
-
-small.forgot-password a {
-    float: right;
-    font-weight: lighter;
-    text-decoration: underline;
-    color: var(--brand-blue);
-}
-
-.social-login a.btn {
-    border: 1px solid #dadce0;
-}
-
-.social-login a.btn.btn-block:hover {
-    background-color: var(--brand-grey);
-    border: 1px solid var(--brand-dark-grey);
-}
-
-.login label.requiredField, .signup label.requiredField {
-    font-weight: bold;
-}
-
 /* -------------------------- call-to-action -------------------------- */
-
 .cta img.card-img {
     object-fit: cover;
     height: 23em;
@@ -283,7 +228,6 @@ small.forgot-password a {
 }
 
 /* -------------------------- Account-settings -------------------------- */
-
 p.card-text {
     margin-bottom: .5em;
 }

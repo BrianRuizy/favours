@@ -1,31 +1,120 @@
-{% extends "index.html" %}
+<!-- base template -->
 {% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-<!-- Login form -->
-{% block content %}
-<div class="section section-login">
-    <div class="container">
-        <div class="card p-4 mx-auto col-lg-5">
-            <div class="text-center pb-2">
-                <img src="{% static 'assets/favours_light.png' %}" width="55" alt="Logo">
-                <h3 class="mb-0">Welcome back {{ user.Username }}</h3>
-                <p>Some catchy sentence here</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favours | Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href="{% static 'assets/favicon/favicon.ico' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro" rel="stylesheet">
+    
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}
+    <style>
+        /* -------------------------- login form -------------------------- */
+        .section.section-login {
+            min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+            min-height: 100vh; /* These two lines are counted as one :-)       */
+            display: flex;
+            align-items: center;
+        }
+
+        .card {
+            border-radius: .8em;
+            border: 1px solid #dadce0;
+        }
+
+        @media screen and (max-width: 500px) {
+            .card {
+                border: none;
+            }
+        }
+
+        hr.divider {
+            overflow: visible;
+            border: none;
+            border-top: 1px solid var(--brand-grey);
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        hr.divider:after {
+            content: 'OR';
+            display: inline-block;
+            position: relative;
+            top: -15px;
+            font-size: 12px;
+            padding: 0 16px;
+            background: #fff;
+            color: #3a3a3a;
+        }
+
+        .btn.btn-login, .btn.btn-signup, .btn.btn-logout {
+            color: #fff;
+            border-radius: 2rem;
+            margin-top: 2rem;
+        }
+
+        small.forgot-password a {
+            float: right;
+            font-weight: lighter;
+            text-decoration: underline;
+            color: var(--brand-blue);
+        }
+
+        .social-login a.btn.btn-block:hover {
+            background-color: var(--brand-grey);
+            border: 1px solid var(--brand-dark-grey);
+        }
+
+        .btn.btn-login:hover, .btn.btn-signup:hover, .btn.btn-logout:hover { 
+            box-shadow: 0 0 0px 4px var(--brand-grey); 
+        }
+
+        .social-login a.btn {
+            border: 1px solid #dadce0; 
+        }
+
+        .login label.requiredField, .signup label.requiredField { 
+            font-weight: bold; 
+        }
+    </style>
+    {% endblock stylesheets %}
+</head>
+
+<body>
+    <!-- login form -->
+    <div class="section section-login">
+        <div class="container">
+            <div class="card p-4 mx-auto col-lg-5">
+                <div class="text-center pb-2">
+                    <img src="{% static 'assets/favours_light.png' %}" width="85" alt="Logo">
+                    <h3 class="mb-0 text-logo">Favours</h3>
+                    <p>Welcome back {{ user.Username }}</p>
+                </div>
+                {% include "allauth/social_login.html" %}
+                <hr class="divider">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button type="submit" class="btn btn-block btn-login btn-gradient primaryAction mt-4">
+                        {% trans "Log In" %}
+                    </button>
+                </form>
+                <hr>
+                <small>Don't have an account? <a href="{{ signup_url }}"><u>Sign Up</u></a></small> 
             </div>
-            {% include "allauth/social_login.html" %}
-            <hr class="divider">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form | crispy }}
-                {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button type="submit" class="btn btn-block btn-login btn-gradient primaryAction mt-4">{% trans "Log In" %}</button>
-            </form>
-            <hr>
-            <small>Don't have an account? <a href="{{ signup_url }}"><u>Sign Up</u></a></small> 
         </div>
     </div>
-</div>
-{% endblock %}
+</body>
+</html>

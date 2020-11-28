@@ -9,7 +9,7 @@
 }
 
 #sidebar {
-    width: 250px;
+    width: 225px;
     position: fixed;
     top: 0;
     left: 0;
@@ -102,7 +102,7 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-    width: calc(100% - 250px);
+    width: calc(100% - 225px);
     min-height: 100vh;
     transition: all 0.3s;
     position: absolute;
