@@ -99,9 +99,9 @@
                     <h3 class="mb-0 text-logo">Favours</h3>
                     <p>Welcome back {{ user.Username }}</p>
                 </div>
-                {% include "allauth/social_login.html" %}
+                {% include "users/allauth/social_login.html" %}
                 <hr class="divider">
-                <form class="login" method="POST" action="{% url 'account_login' %}">
+                <form class="login" method="POST" action="{% url 'account-login' %}">
                     {% csrf_token %}
                     {{ form | crispy }}
                     {% if redirect_field_value %}

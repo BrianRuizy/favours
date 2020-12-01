@@ -14,7 +14,8 @@
 
     <ul class="list-unstyled components">
         <!-- <p>Dummy Heading</p> -->
-        <li class="active"><a href="#">Listings</a></li>
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'listings' %}">Listings</a></li>
         <li><a href="#">Settings</a></li>
         <!-- <li>
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
@@ -24,15 +25,14 @@
                 <li><a href="#">Page 3</a></li>
             </ul>
         </li> -->
-        <li><a href="#">Portfolio</a></li>
     </ul>
 
     <ul class="list-unstyled CTAs">
         <li>
-            <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+            <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="btn btn-outline-light">Feature Request</a>
         </li>
         <li>
-            <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+            <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="btn-invite-friend">Invite a Friend</a>
         </li>
     </ul>
 </nav>

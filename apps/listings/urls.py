@@ -5,16 +5,16 @@ from .views import (
     PostCreateView,
     PostUpdateView,
     PostDeleteView,
-    UserPostListView
+    UserPostListView, 
+    ListingsView
 )
 from . import views
 
 urlpatterns = [
-    path('', PostListView.as_view(), name='listings-home'),
-    path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
-    path('post/new/', PostCreateView.as_view(), name='post-create'),
-    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
-    path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
-    path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
-    path('about/', views.about, name='listings-about'),
+    path('', ListingsView.as_view(), name='listings'),
+    path('new/', PostCreateView.as_view(), name='post-create'),
+    path('<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
+    path('<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('<str:username>', UserPostListView.as_view(), name='user-posts'),
 ]

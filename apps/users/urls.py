@@ -6,14 +6,14 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('accounts/login/', views.MyLoginView.as_view(), name='account_login'),
-    path('accounts/logout/', views.MyLogoutView.as_view(), name='account_logout'),
-    path('accounts/signup/', views.MySignupView.as_view(), name='account_signup'),
-    path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),  # used by social-media logins
+    path('login/', views.MyLoginView.as_view(), name='account-login'),
+    path('logout/', views.MyLogoutView.as_view(), name='account-logout'),
+    path('signup/', views.MySignupView.as_view(), name='account-signup'),
     path('profile/', views.profile, name='profile'),
     path('account/', views.account, name='account'),
-    path('account/password-reset/', views.MyPasswordResetView.as_view(), name='account_reset_password'),
-    path('account/personal-info/', views.personal_info, name='account_personal_info'),
+    path('account/password-reset/', views.MyPasswordResetView.as_view(), name='account-reset-password'),
+    path('account/personal-info/', views.personal_info, name='account-personal-info'),
 ]
 
 if settings.DEBUG:

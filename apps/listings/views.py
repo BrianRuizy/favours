@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
@@ -10,13 +11,6 @@ from django.views.generic import (
 )
 
 from .models import Post
-
-
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request='home.html', context=context)
 
 
 class PostListView(ListView):
@@ -81,5 +75,10 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
-def about(request):
-    return render(request, 'listings/about.html', {'title': 'About'})
+class ListingsView(ListView):
+    # paginated list of posts
+    model = Post
+    template_name = 'listings/listings.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 10

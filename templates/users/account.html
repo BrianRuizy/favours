@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% block title %} | Account{% endblock title %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col-md-10">
+                    <h2>Account</h2>
+                    <p>
+                        <strong>{{ user.first_name | default:user.username}}, </strong>{{ user.email }}
+                        <br>Looking for your<a href="{% url 'profile' %}"> <u>Profile</u></a>?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section section-account-settings pt-0">
+            <div class="card-deck">
+                <div class="card text-center soft-shadow">
+                    <div class="card-title ">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/user-menu-female.png"/>                </div>
+                    <div class="card-body">
+                        <h5 class="card-text"><a  href="{% url 'account-personal-info' %}">Personal Info</a></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card text-center soft-shadow">
+                    <div class="card-title ">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/privacy.png"/>                </div>
+                    <div class="card-body">
+                        <h5 class="card-text "><a href="{% url 'account-reset-password' %}">Login & Privacy</a></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card text-center soft-shadow">
+                    <div class="card-title ">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/alarm.png"/>                </div>
+                    <div class="card-body">
+                        <h5 class="card-text"><a>Notifications</a></h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock content %}
