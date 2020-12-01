@@ -9,19 +9,19 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 
 
 class MyLoginView(LoginView):
-    template_name = 'allauth/login.html'
+    template_name = 'users/allauth/login.html'
 
 
 class MyLogoutView(LogoutView):
-    template_name = 'allauth/logout.html'
+    template_name = 'users/allauth/logout.html'
 
 
 class MySignupView(SignupView):
-    template_name = 'allauth/signup.html'
+    template_name = 'users/allauth/signup.html'
 
 
 class MyPasswordResetView(PasswordResetView):
-    template_name = 'account/password_reset.html'
+    template_name = 'users/account/password_reset.html'
 
 
 @login_required
@@ -40,13 +40,13 @@ def profile(request):
     context = {
         'profile_form': p_form
         }
-    return render(request, 'profile.html', context=context)
+    return render(request, 'users/profile.html', context=context)
 
 
 @login_required
 def account(request):
 
-    return render(request, 'account.html', context={})
+    return render(request, 'users/account.html', context={})
 
 
 @login_required
@@ -63,4 +63,4 @@ def personal_info(request):
     context = {
         'user_form': u_form
         }
-    return render(request, 'account/personal_info.html', context=context)
+    return render(request, 'users/account/personal_info.html', context=context)

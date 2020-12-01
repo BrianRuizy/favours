@@ -100,7 +100,7 @@
                     <h3 class="mb-0">Welcome to <span class="text-logo">Favours</span>!</h3>
                     <p>Some welcoming sentence here</p>
                 </div>
-                {% include "allauth/social_login.html" %}
+                {% include "users/allauth/social_login.html" %}
                 <hr class="divider">
                 <form class="signup" method="POST" action="{% url 'account_signup' %}">
                     {% csrf_token %}
