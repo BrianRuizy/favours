@@ -12,13 +12,6 @@ from django.views.generic import (
 from .models import Post
 
 
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request='home.html', context=context)
-
-
 class PostListView(ListView):
     # paginated list of posts
     model = Post
