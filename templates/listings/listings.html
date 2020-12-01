@@ -1,0 +1,53 @@
+<!-- templates/listings.html -->
+{% extends "index.html" %}
+{% load socialaccount %}
+{% block title %} | Listings{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 px-3 py-5" style="box-shadow: 5px 0px 20px 0px rgba(0,0,0,.1); z-index: 1;">
+                <h3>Recent Posts</h3>
+                {% for post in posts %}
+                <article class="media listing shadow-sm rounded" >
+                    <img class="rounded-circle article-img" href="{{ post.owner.profile.url }}" src="{{ post.owner.profile.image.url }}">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                            <a class="mr-2" href="{% url 'user-posts' post.owner.username %}">{{ post.owner }}</a>
+                            <small class="text-muted">{{ post.date_posted | date:"F d, Y" }}</small>
+                        </div>
+                        <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                        <h5>
+                            {% if post.category %}
+                            <span class="badge badge-pill badge-light mr-2">{{ post.category }}</span>
+                            {% endif %}
+                            ${{ post.price }}
+                        </h5>
+                        <p class="article-content">{{ post.description }}</p>
+                    </div>
+                </article>
+                {% endfor %}
+
+                {% if is_paginated %}
+                <div class="mt-4">
+                    <p class="btn mb-4">{{ page_obj.number }}/{{ paginator.num_pages }}</p>
+                    {% if page_obj.has_previous %}
+                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.previous_page_number }}">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+                    
+                    {% if page_obj.has_next %}
+                        <a class="btn btn-outline-secondary mb-4" href="?page={{ page_obj.next_page_number }}">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-7 p-0">
+                <img class="h-100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fallinallnews.com%2Fwp-content%2Fuploads%2F2015%2F05%2FGoogle-Maps-1024x574.png&f=1&nofb=1" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+{% endblock content %}

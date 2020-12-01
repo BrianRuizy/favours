@@ -45,7 +45,6 @@ def profile(request):
 
 @login_required
 def account(request):
-
     return render(request, 'users/account.html', context={})
 
 

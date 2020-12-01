@@ -2,6 +2,7 @@
 {% extends "index.html" %}
 {% load socialaccount %}
 {% block title %} | Home{% endblock title %}
+
 {% block content %}
     <div class="section cta">
         <div class="container">
@@ -20,7 +21,7 @@
         <div class="container">
             <h3>Recent Posts</h3>
             {% for post in posts %}
-            <article class="media content-section listing border-top" >
+            <article class="media listing border-top" >
                 <img class="rounded-circle article-img" href="{{ post.owner.profile.url }}" src="{{ post.owner.profile.image.url }}">
                 <div class="media-body">
                     <div class="article-metadata">
@@ -36,7 +37,6 @@
                     </h5>
                     <p class="article-content">{{ post.description }}</p>
                 </div>
-                <span class="border-bottom"></span>
             </article>
             {% endfor %}
 

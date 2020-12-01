@@ -1,42 +1,40 @@
 {% extends "index.html" %}
-
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% load account %}
-
 {% block head_title %}{% trans "Password Reset" %}{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col-md-10 mt-1">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{% url 'account' %}">Account</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Personal Info</li>
-                    </ol>
-                </nav>                
-                <h2>Personal Information</h2>
+    {% if user.is_authenticated %}
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col-md-10 mt-1">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'account' %}">Account</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Personal Info</li>
+                        </ol>
+                    </nav>                
+                    <h2>Personal Information</h2>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <div class="col-sm">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            {{ user_form | crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-secondary" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <div class="section">
-        <div class="row">
-            <div class="col-sm">
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <fieldset class="form-group">
-                        {{ user_form | crispy }}
-                    </fieldset>
-                    <div class="form-group">
-                        <button class="btn btn-outline-secondary" type="submit">Update</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
+    {% endif %}
 {% endblock %}

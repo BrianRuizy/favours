@@ -19,8 +19,8 @@ from .views import PostListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', PostListView.as_view(), name='listings-home'),
-    path('', include('apps.users.urls')),
+    path('', PostListView.as_view(), name='home'),
+    path('users/', include('apps.users.urls')),
     path('listings/', include('apps.listings.urls')),
     path('api/', include('apps.api.urls')),
 ]

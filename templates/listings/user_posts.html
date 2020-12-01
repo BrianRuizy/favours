@@ -2,12 +2,13 @@
 {% extends "index.html" %}
 {% load socialaccount %}
 {% block title %} | User Posts{% endblock title %}
+
 {% block content %}
     <div class="section">
         <div class="container">
             <h2 class="mb-2">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>
             {% for post in posts %}
-            <article class="media content-section listing">
+            <article class="media listing">
                 <img class="rounded-circle article-img" src="{{ post.owner.profile.image.url }}">
                 <div class="media-body">
                     <div class="article-metadata">
