@@ -102,7 +102,7 @@
                 </div>
                 {% include "users/allauth/social_login.html" %}
                 <hr class="divider">
-                <form class="signup" method="POST" action="{% url 'account_signup' %}">
+                <form class="signup" method="POST" action="{% url 'account-signup' %}">
                     {% csrf_token %}
                     {{ form | crispy }}
                     

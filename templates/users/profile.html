@@ -18,7 +18,7 @@
                     <div class="col-md-10 ">
                         <h2>Profile</h2>
                         <p>Hey, {{ user.first_name | default:user.username}}!</p>
-                        <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                        <a href="{% url 'account-logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                     </div>
                 </div>
                 <div class="row">
