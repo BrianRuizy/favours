@@ -19,7 +19,7 @@ class PostList(generics.ListCreateAPIView):
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    """ Read, update, or delete a specific posted favou """
+    """ Read, update, or delete a specific posted favour"""
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [

@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+
 
     # <custom apps>
     'apps.users',
@@ -178,7 +181,7 @@ if USE_S3_FLAG == 'True':
 #     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 
-# else:
+else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
 
